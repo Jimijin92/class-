@@ -55,13 +55,16 @@
 					<a href="/mvc/board/view.do?seq=${dto.seq}">${dto.subject}</a>
 					<c:if test="${dto.gap < 90}">
 					<span class="label label-danger">new</span>
-					</c:if>
+			</c:if>
 				</td>
 				<td>${dto.name}</td>
 				<td>${dto.regdate}</td>
 				<td>${dto.readcount}</td>
 			</tr>
 			</c:forEach>
+			
+			
+			
 		</table>
 		<!-- 시퀀스 객체의 캐쉬 설정때문에 게시글 번호 갑자기 점프하는 현상 생김(글 10개 쓴적 없는데 글번호 1번에서 11번됨)  -->
 		

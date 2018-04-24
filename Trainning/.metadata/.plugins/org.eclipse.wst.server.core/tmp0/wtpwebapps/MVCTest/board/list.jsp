@@ -57,7 +57,7 @@
 					<span class="label label-danger">new</span>
 			</c:if>
 				</td>
-				<td>${dto.name}</td>
+				<td>${dto.name}</td> 
 				<td>${dto.regdate}</td>
 				<td>${dto.readcount}</td>
 			</tr>
