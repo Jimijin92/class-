@@ -1,0 +1,88 @@
+package com.test.collection;
+
+import java.io.FileOutputStream;
+import java.util.Enumeration;
+import java.util.Properties;
+
+public class Ex88_Collection {
+
+	public static void main(String[] args) {
+		
+		//Ex88_Collection.java
+		
+		
+		//Map : HashMap, TreeMap, Hashtable, Properties
+		
+		
+		//Vector -> (JDK 1.5) -> ArrayList
+		//HashTable ->(JDK 1.5) -> HashMap
+		
+		
+		//Properties
+		//	- 
+		//	- HashTable을 상속받아 구현 
+		//  - Key와 value가 모두 String 고정 
+		//	- 제네릭 버전이 제공 안됨 
+		//	- 주로 프로그램의 환경값들을 관리하는 용도의 집합(***)
+		
+		m1();
+		
+		
+		
+	}
+
+	private static void m1() {
+		Properties prop = new Properties();
+		//프로그램 설정값
+		// : 프로그램 종료 -> 세팅값 물리 저장 -> 프로그램 실행 -> 세팅값 읽기 -> 프로그램 적용 
+		
+		prop.setProperty("path", "C:\\Util\\Run");
+		prop.setProperty("language", "ko");
+		prop.setProperty("autosave", "30");
+		prop.setProperty("front-famaily", "나눔고딕체");
+		
+		//탐색
+		System.out.println(prop);
+		System.out.println(prop.getProperty("path"));
+		
+		//Enumeration > Iterator > ListIterator
+		Enumeration e = prop.propertyNames();
+		
+		while (e.hasMoreElements()) {
+			System.out.println(e.nextElement());
+		}
+		
+		//저장 
+		try {
+			
+			//prop.store(new FileOutputStream("setting.txt"), "");
+			prop.storeToXML(new FileOutputStream("setting.xml"), null);
+			System.out.println("저장 완료");
+			
+		} catch (Exception e2) {
+			System.out.println("m1 : " + e.toString());
+		}
+		
+		
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

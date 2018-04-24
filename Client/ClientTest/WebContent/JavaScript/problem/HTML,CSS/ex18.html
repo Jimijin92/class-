@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	h3 {
+		width: 680px;
+		margin: 0px auto;
+	}
+	
+	#menu1, #menu2, #menu3, #menu4, #menu5 {
+		width: 680px;
+		margin: 10px auto;
+		border: 0px solid black;		
+	}
+	
+	#menu1 div, #menu2 div, #menu3 div, #menu4 div, #menu5 div {
+		float: left;
+		margin-right: -10px;
+		border: 10px solid black;
+		overflow: hidden;
+	}
+	
+	#menu1 div img {
+		display: block;
+		transform: translate(-126px, 0px);
+		transition: all .5s;
+	}
+	
+	#menu1 div:hover img {
+		transform: translate(0px, 0px);
+	}
+	
+	#menu2 div img {
+		display: block;
+		opacity: 0;
+		transition: all .5s;
+	}
+	
+	#menu2 div:hover img {
+		opacity: 1;
+	}
+	
+	#menu3 div img {
+		display: block;
+		transition: all .5s;
+		opacity: 0;
+		transform: scale(0, 0);
+	}
+	
+	#menu3 div:hover img {
+		transform: scale(1, 1);
+		opacity: 1;
+	}
+	
+	#menu4 div img {
+		transform: translate(0px, -126px) scale(0, 0) rotate(0deg);
+		display: block;
+		opacity: 0;
+		transition: all .5s;
+	}
+	
+	#menu4 div:hover img {
+		transform: translate(0px, 0px) scale(1, 1) rotate(360deg);
+		opacity: 1;
+	}
+	
+	#menu5 div img {
+		opacity: 0;
+		animation-duration: 1.4s;
+		transform: scale(0, 1);
+		display: block;
+	}
+	
+	#menu5 div:hover img {
+		animation-name: rotateImge;
+		animation-fill-mode: forwards;
+	}
+	
+	@keyframes rotateImge {
+		0% { transform: scale(0, 1); opacity: 0; }
+		10% { transform: scale(.1, 1); opacity: 0.1;}
+		20% { transform: scale(-.2, 1);  opacity: 0.2;}
+		30% { transform: scale(.3, 1);  opacity: 0.3;}
+		40% { transform: scale(-.4, 1);  opacity: 0.4;}
+		50% { transform: scale(.5, 1);  opacity: 0.5;}
+		60% { transform: scale(-.6, 1);  opacity: 0.6;}
+		70% { transform: scale(.7, 1);  opacity: 0.7;}
+		80% { transform: scale(-.8, 1);  opacity: 0.8;}
+		90% { transform: scale(.9, 1);  opacity: 0.9;}
+		100% { transform: scale(-1, 1);  opacity: 1;}
+	}
+	
+	
+	#menu1:after, #menu2:after, #menu3:after, #menu4:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+</style>
+</head>
+<body>
+	<!-- ex55.htm -->
+	
+	<div id="menu1">
+		<div><img src="images/rect_icon01.png"></div>
+		<div><img src="images/rect_icon02.png"></div>
+		<div><img src="images/rect_icon03.png"></div>
+		<div><img src="images/rect_icon04.png"></div>
+		<div><img src="images/rect_icon05.png"></div>
+	</div>
+	
+	<div id="menu2">
+		<div><img src="images/rect_icon01.png"></div>
+		<div><img src="images/rect_icon02.png"></div>
+		<div><img src="images/rect_icon03.png"></div>
+		<div><img src="images/rect_icon04.png"></div>
+		<div><img src="images/rect_icon05.png"></div>
+	</div>
+	
+	<div id="menu3">
+		<div><img src="images/rect_icon01.png"></div>
+		<div><img src="images/rect_icon02.png"></div>
+		<div><img src="images/rect_icon03.png"></div>
+		<div><img src="images/rect_icon04.png"></div>
+		<div><img src="images/rect_icon05.png"></div>
+	</div>
+	
+	<div id="menu4">
+		<div><img src="images/rect_icon01.png"></div>
+		<div><img src="images/rect_icon02.png"></div>
+		<div><img src="images/rect_icon03.png"></div>
+		<div><img src="images/rect_icon04.png"></div>
+		<div><img src="images/rect_icon05.png"></div>
+	</div>
+	
+	<h3>animation-fill-mode: forwards;</h3>
+	<div id="menu5">
+		<div><img src="images/rect_icon01.png"></div>
+		<div><img src="images/rect_icon02.png"></div>
+		<div><img src="images/rect_icon03.png"></div>
+		<div><img src="images/rect_icon04.png"></div>
+		<div><img src="images/rect_icon05.png"></div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+package com.manager;
+
+import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.common.Manager;
+import com.common.Student;
+import com.common.StudentAddInfor;
+import com.io.*;
+
+public class ComManagerMenu {
+
+	private static Scanner scan = new Scanner(System.in);
+			//매니저 기본정보 넣은 리스트
+	static {
+		//scan = new Scanner(System.in);
+		
+	}
+	public static void main(String[] args) {
+		//메뉴 시작전 학생 기본정보.dat 와 학생 추가정보.dat 읽어서 메모리에 옮기기
+		ComInManager.load();
+		System.out.println(ComInManager.getManagerlist());
+	
+	}
+	
+	
+}

@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [13/Mar/2018:21:13:30 +0900] "GET /ClientTest/HTML/ex19_form.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Mar/2018:21:14:04 +0900] "GET /ClientTest/HTML/ex20_form.html HTTP/1.1" 200 2812

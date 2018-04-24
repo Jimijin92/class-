@@ -1,0 +1,7 @@
+127.0.0.1 - - [10/Mar/2018:18:42:08 +0900] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [10/Mar/2018:18:42:09 +0900] "GET /ClientTest/HTML/ex19_form.html HTTP/1.1" 200 2282
+0:0:0:0:0:0:0:1 - - [10/Mar/2018:18:42:33 +0900] "GET /ClientTest/HTML/ex19_ok.jsp?name=kjl&age=kljl HTTP/1.1" 200 375
+0:0:0:0:0:0:0:1 - - [10/Mar/2018:18:42:33 +0900] "GET /ClientTest/HTML/ex19_ok.jsp?name=kjl&age=kljl HTTP/1.1" 200 375
+0:0:0:0:0:0:0:1 - - [10/Mar/2018:18:48:14 +0900] "GET /ClientTest/HTML/ex19_form.html HTTP/1.1" 200 2282
+0:0:0:0:0:0:0:1 - - [10/Mar/2018:18:48:15 +0900] "GET /favicon.ico HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [10/Mar/2018:18:48:18 +0900] "GET /ClientTest/HTML/ex19_ok.jsp?name=%E3%85%8F%EC%95%84%EC%95%84%EC%95%84%EC%95%84&age= HTTP/1.1" 200 383

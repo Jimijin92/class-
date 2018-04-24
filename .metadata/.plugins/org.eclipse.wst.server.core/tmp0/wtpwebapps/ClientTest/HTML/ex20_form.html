@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- ex20_form.html -->
+
+<!-- 
+
+<form>의 하위 태그들
+- 입력 태그, 입력 컨트롤
+
+<input>태그
+- 인라인 태그
+- 단독 태그 
+- type 속성 : 입력 컨트롤의 역할(형태) 지정 
+- id, class, name = 식별자 
+- size : 크기(form컨트롤은 숫자를 글자수로 취급)
+- maxlength : 최대길이
+- value : 기본값
+- readonly : 읽기 전용, 플래그 타입, 전원 On, 전송된다.
+- disabled : 비활성화, 플래그 타입, 전원 Off, 전송안된다. 
+
+ -->
+ <p>
+	<input type="text">
+</p>
+
+<p>
+	<form action = "ex19_ok.jsp"method="get">
+	<input type="text"id ="data" class="data" name="data" size = "30" 
+			   maxlength="5" value =""  accesskey="s" autocomplete = "off"><br>
+	<input type ="submit">
+	</form>
+</p>
+
+
+<p>
+<!--
+Masked Text Box, Password Box 
+: 모든 속성이 일반 텍스트 박스와 동일 
+: value 사용하지 말 것 
+ -->
+	암호 : <input type = "password" >
+</p>
+
+<p>
+<!-- 
+다중 라인 텍스트 박스
+: 대부분 속성은 텍스트 박스와 동일
+: value 없음
+: <textarea>의 영역은 편집기 영역과 동일한 성질을 가진다.(공백 문자열 적용)
+: maxlength 없음  
+ -->
+\\	<textarea rows = "10" cols = "50" style="resize:none;outline:none">하나
+둘
+셋 
+넷</textarea>
+</p>
+
+<p>
+<!-- 
+체크박스
+	: 논리값 입력
+	: 다중선택
+ -->
+	체크박스: <input type="checkbox">
+</p>
+
+<h1>약관</h1>
+<p>내용입니다.</p>
+<input type="checkbox"id="cbAgree" value = "yes" checked> <!-- 체크된 걸 기본설정으로 해 둠 -->
+<label for ="cbAgree">약관에 동의합니다.</label><!-- 라벨링 하면 텍스트에 갖다대도 체크됨 -->
+<br>
+<input type = "submit" value = "다음 단계로" disabled>
+
+<hr>
+
+<label for "txtName"> 이름 : </label> <input type = "text" id = "txtName">
+
+<p>
+<!-- 
+라디오 버튼
+- 단일 선택
+- 두개 이상의 버튼을 동시에 사용
+ -->
+
+	라디오 버튼 : 
+	<input type="radio" name = "rbAgree"> 동의함
+	<input type="radio" name = "rbAgree"> 동의안함 <!-- name = "rbAgree" 주면 세트가됨 -->
+	<input type="radio" name = "rbAgree"> 미정
+	<input type="radio" name = "rbAgree"> 포기
+<br>
+성별 :
+	<input type = "radio" name = "rbGender" checked>남자
+	<input type = "radio" name = "rbGender">여자
+</p>	
+	
+	
+	
+
+<!-- 
+셀렉트 박스
+- 콤보박스, 드랍다운리스트 등......
+- 단일 선택
+ -->
+ <p>
+ 셀렉트 박스 :
+ <select name = "sel" size = "5" multiple>
+ 	<option value ="1">강아지</option>
+ 	<option value ="2">고양이</option>
+ 	<option value ="3">병아리</option> 	
+ </select>
+ 
+</p>
+
+</body>
+</html>

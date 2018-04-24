@@ -1,0 +1,163 @@
+package com.test.collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+public class Ex85_Collection {
+
+	public static void main(String[] args) {
+		
+		//Ex85_Collection.java
+		
+		//ArrayList, LinkedList, Queue, Stack -> list계열
+		
+		//Set 계열
+		//	- 순서가 없는 배열
+		//	- 첨자가 없음 (방번호 X)
+		//	- 중복값을 가질 수 없다. 
+		
+		//HashSet
+		//	- Set 인터페이스 구현 
+		//	- 순서x, 중복값x
+		
+		m1();
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	private static void m1() {
+		
+		//**인터페이스를 구현한 클래스의 객체를 만들 때 참조변수는 인터페이스 변수로 만드는 것이 좋다. 
+		//보통 좌우 다를때는 좌측이 인터페이스다.
+		
+		//HashSet<String> set = new HashSet<String>();
+		Set<String> set = new HashSet<String>();
+		
+		//ArrayList<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<String>();
+		
+		//요소 추가
+		set.add("하나");
+		set.add("둘");
+		set.add("셋");
+		set.add("넷");
+		set.add("다섯");
+		
+		set.add("하나"); //X 안되는게 아니라 무시하는거임 
+		
+		System.out.println(set.size());
+		System.out.println(set); //순서 아무렇게나 나옴 원래..
+		
+		//로또 번호 추출
+		//1. ArrayList
+		//2. HashSet
+		
+		Random rnd = new Random();
+		
+		ArrayList<Integer> nums1 = new ArrayList<Integer>();
+		HashSet<Integer> nums2 = new HashSet<Integer>();
+		
+		for(int i=0; i<6; i++) {
+			int num = rnd.nextInt(45) + 1;
+			
+			//로또 번호로서 유효한지? 기존의 숫자가 중첩되는지?\
+			boolean flag = true;
+			
+			for(int j=0; j<nums1.size(); j++) {
+				if(num == nums1.get(j)) {
+					flag = false;
+					break;
+				}
+			}
+			
+			if(flag) {
+				nums1.add(num);
+			} else {
+				i--; //다시 돌 수 있게 횟수를 하나 줄이기 
+			}
+	
+		}
+		
+		
+		//Collections.sort(nums1);//m1    // 방법 1. 방 하나가 데이터 하나로 되어있으면 이게 더 편함 
+		
+		nums1.sort(new Comparator<Integer>() {  //방법 2. 
+
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				// o1이 크면 오름차순 , o2가 크면 내림차순
+				return o1 - o2;
+			}
+			
+		});
+		
+		System.out.println(nums1);
+		
+		
+		
+		nums1.clear();
+		
+		//위의 방법을 살짝 개량
+		while (nums1.size() < 6) {
+			
+			int num = rnd.nextInt(45) + 1;
+			
+			boolean flag = true;
+			
+			for(int i=0; i<nums1.size(); i++) {
+				if(num == nums1.get(i)) {
+					
+				}
+			}
+			
+			if(flag) {
+				nums1.add(num);
+			} 
+		}
+		
+		System.out.println(nums1);
+		
+		
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

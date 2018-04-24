@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+/*  
+메뉴
+1. 상단메뉴
+2. 붙박이
+3. 슬라이딩
+*/
+
+body{margin: 0;}
+#menu {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 120px;
+	border-bottom: 1px solid #ccc;
+	background-color: white;
+	box-shadow: 0px 2px 2px #eee;/* 종이 덧댄거 같은 효과 */
+	transform: translate(0px, -80px);
+	transition: transform .7s;
+	
+	/* #menu가 이동하려고 구현하는 것이 아니라... span의 부모 역할을 하기 위해 static이 아닌 값을 지정: 본인은 이동을 안함 */
+	
+	/* position: relative;
+	left: 0px;
+	top: 0px; */
+}
+
+#menu:hover{
+	transform: translate(0px, 0px);
+}
+
+
+
+#menu span{
+	font-variant: small-caps;
+	font-weight: bold;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+
+section{
+	margin:20px;
+	margin-top: 60px;
+}
+
+#cat div{
+	border: 20px solid black;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	overflow: hidden;/*부모영역을 빠져나가면 안보여준다.*/
+}
+
+/* <div style='clear:both;'></div> 추가하는 것과 동일한 효과 */
+#cat:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#cat div img{
+	transform: translate(150px, 0px);
+	transition: transform .5s;
+}
+
+#cat div:hover img{
+	transform: translate(0px, 0px);
+}
+
+#cat2{
+width:128px;
+height: 128px;
+border: 20px solid black;
+padding: 10px;
+margin: 20px;
+overflow: hidden;
+/* 나머지 네마리 밑으로 가는 이유: 부모의 영역을 만나서 자동개행 */}
+
+#cat2 #innerBox{
+	border: 0px solid red; 
+	width: 780px;
+	transition: transform 1s;
+	/* 할아버지를 벗어나도 부모가 커버쳐줌 */
+}
+
+#cat2 #innerBox img{
+	margin-right: 20px;
+}
+
+#cat2:hover #innerBox {
+	transform: translate(-612px, 0px);
+}
+
+#pbox, #cbox {
+	border: 10px solid orange;
+}
+
+#pbox {
+	margin: 20px;
+	background-color: slateblue;
+	padding: 20px;
+	width: 340px;
+	height:340px;
+	overflow: hidden;
+}
+
+#cbox {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+	transition: transform 5s;
+}
+
+#dbox {
+	width: 240px;
+	height:240px;
+	background-color: red;
+	margin: 20px;
+	transition: transform 5s;
+}
+
+#pbox:hover #cbox{
+	transform: rotate(3600deg);
+}
+
+#pbox:hover #dbox{
+	transform: rotate(-7200deg);
+}
+
+</style>
+</head>
+<body>
+	<!--ex49_menu.htm-->
+	<nav id="menu">
+	<span>Menu</span>
+	
+	</nav>
+	
+	<hr>
+	
+	<section>
+	
+	<div id="cat">
+		<div><img src="../images/catty01.png"></div>
+		<div><img src="../images/catty02.png"></div>
+		<div><img src="../images/catty03.png"></div>
+		<div><img src="../images/catty04.png"></div>
+		<div><img src="../images/catty05.png"></div>
+	</div>
+
+	다른 내용 
+	
+	<div id="cat2">
+		<div id="innerBox">
+			<img src="../images/catty01.png">
+			<img src="../images/catty02.png">
+			<img src="../images/catty03.png">
+			<img src="../images/catty04.png">
+			<img src="../images/catty05.png">
+	</div>
+	
+	
+		<div id="pbox">
+			<div id= "cbox">
+				<div id="dbox""></div>
+			</div>
+		</div>
+		
+		
+	</section>
+	
+	
+
+	<!-- <section>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+			cumque quia quae quisquam fuga asperiores dolores ratione quis
+			laborum fugit alias nam aspernatur laudantium ipsam nihil ex quo
+			nulla aliquid.</p>
+		<p>Temporibus tempore illo quod facilis laudantium soluta
+			consequuntur pariatur voluptates omnis alias reiciendis fugiat veniam
+			voluptate reprehenderit repudiandae numquam ut doloremque vitae iure
+			ipsa et nisi explicabo natus maiores ullam.</p>
+		<p>Aliquam ex ab a tenetur nisi veritatis quas rem aspernatur
+			expedita magni architecto impedit adipisci facere eligendi quidem
+			nihil illo pariatur nobis harum magnam saepe porro cupiditate veniam
+			necessitatibus accusantium.</p>
+		<p>Labore a deserunt aliquid esse cupiditate harum maiores cum ut
+			beatae facere? Earum quae iste voluptates deserunt impedit nulla unde
+			mollitia odio facilis alias natus debitis modi ducimus sapiente illo!</p>
+		<p>Consequuntur blanditiis libero animi esse voluptates nostrum
+			neque quod repudiandae quaerat aspernatur nihil aperiam ea.
+			Laudantium accusantium pariatur praesentium magnam mollitia dolorem
+			distinctio recusandae cupiditate quod eos? Deserunt beatae optio.</p>
+		<p>Praesentium ipsam laboriosam a accusamus aut consequatur esse
+			deleniti et veniam molestias eligendi deserunt libero totam dicta
+			doloribus? In inventore tenetur praesentium fugiat laudantium illo
+			iure perspiciatis autem corporis commodi.</p>
+		<p>Nemo suscipit reprehenderit nobis earum sint aliquam harum
+			corporis fuga laborum soluta culpa obcaecati minima tenetur ratione
+			natus aspernatur magnam asperiores fugit id totam amet sunt nulla
+			labore libero perspiciatis.</p>
+		<p>Sit temporibus cumque minima nemo deserunt quam doloribus aut
+			laborum nesciunt animi repellat eveniet quaerat unde ea veniam! Est
+			omnis sunt maxime repellat animi odit eum tempora vero qui neque.</p>
+		<p>Non illum quidem numquam distinctio ex tempore soluta rerum
+			corrupti vitae perspiciatis quia natus illo atque deserunt iure
+			accusantium harum sapiente tempora beatae recusandae ea assumenda
+			eius. Facilis excepturi dicta?</p>
+		<p>Suscipit expedita vitae libero quia corporis possimus vero
+			quidem nesciunt ut reiciendis soluta tenetur ea iusto. Quos dolorum
+			facere quam beatae consectetur distinctio ipsa labore explicabo
+			commodi facilis voluptatem aspernatur.</p>
+			<p>Sit temporibus cumque minima nemo deserunt quam doloribus aut
+			laborum nesciunt animi repellat eveniet quaerat unde ea veniam! Est
+			omnis sunt maxime repellat animi odit eum tempora vero qui neque.</p>
+		<p>Non illum quidem numquam distinctio ex tempore soluta rerum
+			corrupti vitae perspiciatis quia natus illo atque deserunt iure
+			accusantium harum sapiente tempora beatae recusandae ea assumenda
+			eius. Facilis excepturi dicta?</p>
+		<p>Suscipit expedita vitae libero quia corporis possimus vero
+			quidem nesciunt ut reiciendis soluta tenetur ea iusto. Quos dolorum
+			facere quam beatae consectetur distinctio ipsa labore explicabo
+			commodi facilis voluptatem aspernatur.</p>
+			<p>Sit temporibus cumque minima nemo deserunt quam doloribus aut
+			laborum nesciunt animi repellat eveniet quaerat unde ea veniam! Est
+			omnis sunt maxime repellat animi odit eum tempora vero qui neque.</p>
+		<p>Non illum quidem numquam distinctio ex tempore soluta rerum
+			corrupti vitae perspiciatis quia natus illo atque deserunt iure
+			accusantium harum sapiente tempora beatae recusandae ea assumenda
+			eius. Facilis excepturi dicta?</p>
+		<p>Suscipit expedita vitae libero quia corporis possimus vero
+			quidem nesciunt ut reiciendis soluta tenetur ea iusto. Quos dolorum
+			facere quam beatae consectetur distinctio ipsa labore explicabo
+			commodi facilis voluptatem aspernatur.</p>
+			<p>Sit temporibus cumque minima nemo deserunt quam doloribus aut
+			laborum nesciunt animi repellat eveniet quaerat unde ea veniam! Est
+			omnis sunt maxime repellat animi odit eum tempora vero qui neque.</p>
+		<p>Non illum quidem numquam distinctio ex tempore soluta rerum
+			corrupti vitae perspiciatis quia natus illo atque deserunt iure
+			accusantium harum sapiente tempora beatae recusandae ea assumenda
+			eius. Facilis excepturi dicta?</p>
+		<p>Suscipit expedita vitae libero quia corporis possimus vero
+			quidem nesciunt ut reiciendis soluta tenetur ea iusto. Quos dolorum
+			facere quam beatae consectetur distinctio ipsa labore explicabo
+			commodi facilis voluptatem aspernatur.</p>
+			<p>Sit temporibus cumque minima nemo deserunt quam doloribus aut
+			laborum nesciunt animi repellat eveniet quaerat unde ea veniam! Est
+			omnis sunt maxime repellat animi odit eum tempora vero qui neque.</p>
+		<p>Non illum quidem numquam distinctio ex tempore soluta rerum
+			corrupti vitae perspiciatis quia natus illo atque deserunt iure
+			accusantium harum sapiente tempora beatae recusandae ea assumenda
+			eius. Facilis excepturi dicta?</p>
+		<p>Suscipit expedita vitae libero quia corporis possimus vero
+			quidem nesciunt ut reiciendis soluta tenetur ea iusto. Quos dolorum
+			facere quam beatae consectetur distinctio ipsa labore explicabo
+			commodi facilis voluptatem aspernatur.</p>
+			<p>Sit temporibus cumque minima nemo deserunt quam doloribus aut
+			laborum nesciunt animi repellat eveniet quaerat unde ea veniam! Est
+			omnis sunt maxime repellat animi odit eum tempora vero qui neque.</p>
+		<p>Non illum quidem numquam distinctio ex tempore soluta rerum
+			corrupti vitae perspiciatis quia natus illo atque deserunt iure
+			accusantium harum sapiente tempora beatae recusandae ea assumenda
+			eius. Facilis excepturi dicta?</p>
+		<p>Suscipit expedita vitae libero quia corporis possimus vero
+			quidem nesciunt ut reiciendis soluta tenetur ea iusto. Quos dolorum
+			facere quam beatae consectetur distinctio ipsa labore explicabo
+			commodi facilis voluptatem aspernatur.</p>
+			
+	</section> -->
+</body>
+</html>

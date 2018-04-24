@@ -1,0 +1,107 @@
+package com.test.collection;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+public class Ex85_Collection {
+
+	public static void main(String[] args) {
+		
+		//Ex85_Collection.java
+		
+		//ArrayList, LinkedList, Queue, Stack -> list계열
+		
+		//Set 계열
+		//	- 순서가 없는 배열
+		//	- 첨자가 없음 (방번호 X)
+		//	- 중복값을 가질 수 없다. 
+		
+		//HashSet
+		//	- Set 인터페이스 구현 
+		//	- 순서x, 중복값x
+		
+		m1();
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	private static void m1() {
+		
+		//**인터페이스를 구현한 클래스의 객체를 만들 때 참조변수는 인터페이스 변수로 만드는 것이 좋다. 
+		//보통 좌우 다를때는 좌측이 인터페이스다.
+		
+		//HashSet<String> set = new HashSet<String>();
+		Set<String> set = new HashSet<String>();
+		
+		//ArrayList<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<String>();
+		
+		//요소 추가
+		set.add("하나");
+		set.add("둘");
+		set.add("셋");
+		set.add("넷");
+		set.add("다섯");
+		
+		set.add("하나"); //X 안되는게 아니라 무시하는거임 
+		
+		System.out.println(set.size());
+		System.out.println(set); //순서 아무렇게나 나옴 원래..
+		
+		//로또 번호 추출
+		//1. ArrayList
+		//2. HashSet
+		
+		Random rnd = new Random();
+		
+		ArrayList<Integer> nums1 = new ArrayList<Integer>();
+		HashSet<Integer> nums2 = new HashSet<Integer>();
+		
+		for(int i=0; i<6; i++) {
+			int num = rnd.nextInt(45) + 1;
+			nums1.add(num);
+		}
+		
+		System.out.println(nums1);
+		
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	.box{
+		border: 1px dashed gray;
+		position: absolute;
+		width: 0px;
+		height: 0px;
+	}
+	
+</style>
+<script>
+	
+	//추가
+	// - 마우스를 반대방향(11시)으로 이동해도 상자가 커지게...
+	
+	
+	var box;
+	var isdown = false;//마우스 버튼의 상태(안누른 상태)
+	
+	window.onmousedown = function(){
+		
+		isdown = true; //누른 상태
+		
+		box = document.createElement("div");//<div></div>
+		
+		box.className = "box";//<div class = "box"></div>
+		
+		box.style.left = event.clientX + "px";
+		box.style.top = event.clientY + "px";
+		
+		document.body.appendChild(box);
+	};
+	
+	
+	
+	window.onmouseup = function(){
+		isdown = false;//뗀상태
+	}
+	
+	
+	
+	window.onmousemove = function(){
+		
+		if(isdown){
+			if(box != null && !=undefined){
+				box.style.width = event.clientX - parseInt(box.style.left) + "px";
+				box.style.height = event.clientY - parseInt(box.style.top) + "px";
+			}
+		}
+	};
+	
+	
+</script>
+</head>
+<body>
+<!--ex48_style.htm-->
+</body>
+</html>

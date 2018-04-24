@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- ex16_image.html -->
+
+<!-- 
+<img>, Image
+- 이미지를 출력하는 태그
+- 단독 태그
+- 인라인 태그 
+
+
+<img>속성
+1. src, source
+	- 이미지 URL
+2. alt, alternate text
+	- 대체 텍스트
+
+ -->
+ 
+ 
+ 
+ <!-- 경로 바뀌었을때는 부모로 갔다가 다시 내려옴 이때 맨 앞에 ../ 표시 -->
+<h1>고양이</h1>
+<img src= "../images/cat01.jpg" alt = "냐옹이">
+<img src= "images/cat02.jpg" alt = "냐옹이2">
+<img src= "images/cat03.jpg" alt = "조폭">
+
+<hr>
+
+ <img src = "images/cat01.jpg"width="250"height="188">
+ <img src = "images/cat01.jpg"width="500"height="376">
+ <img src = "images/cat01.jpg"width="125"height="94">
+ <img src = "images/cat01.jpg"width="500"height="94">
+ <img src = "images/cat01.jpg"width="500"height="1">
+ <img src = "images/cat01.jpg"width="500"height="0">
+ <img src = "images/cat01.jpg"width="2500"height="1880">
+ <img src = "images/cat01.jpg"width="500"><!-- 높이 지우면 브라우저가 종횡비 알아서 계산 -->
+
+A.
+<img src = "images/cat01.jpg"width="250"height="188">
+
+B.
+<img src = "images/cat01.jpg">
+
+<hr>
+
+<a href = "">고양이</a><!-- 텍스트 링크 -->
+<a href = ""><img src = "images/cat01.jpg"border = "0"></a><!-- 이미지 링크 --> 
+<!-- 검은색 테두리 생김, 두께 조정, 색은 조정 못함/ 테두리를 만드는게 아니라 없애는 용도로 주요 사용했음 -->
+<a href = ""><b>클릭 대상(인라인 태그)</b></a>
+
+<!-- 
+
+웹에서 사용 가능한 이미지 파일의 포맷 
+- jpg(jpeg), gif, png
+
+
+
+
+이미지 포맷
+1. 래스터 방식
+	- 비트맵 방식
+	- 우리가 흔히 사용하는 이미지
+	- 이미지 정보를 화소로 저장하는 방식 
+	- 장점 : 디테일한 이미지 
+	- 단점 : 확대/축소 취약 - 이미지 열화(품질 저하)
+	a. jpg(jpeg) 
+		- 사진 표현
+		- 손실 압축 방식
+		- 16만 색상
+	b. gif
+		- 비손실 압축 방식
+		- 최대 255 색상 지원 
+		- 아이콘, 그래프 표현
+		- 투명 레이어 지원
+		- 애니메이션 -> Animated GIF
+	c. png
+		- 비손실 압축 방식
+		- jpg + gif
+	-------------------------------------웹 공식 지원
+	d. bmp
+		- 그림판
+		- MS 자체 포맷
+	e. tiff
+		
+	
+2. 백터 방식
+	- 플래시, 일러스트레이터
+	- 아이콘, 그래프
+	- 수학 공식으로 지정 
+	- 장점 : 확대/축소 품질 변화 없음 
+	- 단점 : 디테일한 이미지 불가 
+	- HTML5 -> SVG
+
+	
+
+ -->
+
+</body>
+</html>

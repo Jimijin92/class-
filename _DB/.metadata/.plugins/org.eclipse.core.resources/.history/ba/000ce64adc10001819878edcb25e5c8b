@@ -1,0 +1,55 @@
+package com.project2.mvc;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import com.project2.mvc.model.DBUtil;
+
+import oracle.jdbc.internal.OracleTypes;
+
+public class MainClass {
+	
+	public static void main(String[] args) {
+		
+		
+		Connection conn = null;
+		CallableStatement stat = null;
+		
+		try {
+			
+			conn = DBUtil.open();
+			String sql = "{ call proc_list_course(?) }";
+			stat = conn.prepareCall(sql);
+			stat.registerOutParameter(1, OracleTypes.CURSOR);
+			
+			stat.executeQuery();
+			
+			ResultSet rs = (ResultSet)stat.getObject(1);
+			String buseo = "";
+			String temp = "";
+			
+			while (rs.next()) {
+				if (!buseo.equals(rs.getString("buseo").trim())) {
+					buseo = rs.getString("buseo").trim();
+					if (temp.length() == 0)
+						temp += String.format("[%s]\n", buseo);
+					else
+						temp = temp.substring(0, temp.length()-2) +  String.format("(종료)\n[%s]\n", buseo);
+				}
+				temp += rs.getString("name") + " ▷ ";				
+			}
+			System.out.println(temp.substring(0, temp.length()-2) + "(종료)");
+			
+			rs.close();
+			stat.close();
+			conn.close();
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+	}
+		
+		
+		
+}

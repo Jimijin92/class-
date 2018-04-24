@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+<script>
+
+	window.onmousedown = function(){//onclick으로 하면 1이 나와야 하는데 0이나옴
+		
+		// 마우스 왼쪽 버튼: 태그 생성 + 클릭좌표
+		// 마우스 오른쪽 버튼: 태그 삭제
+		console.log(event.buttons);
+		console.log(event.clientX, event.clientY);
+		
+		if(event.buttons ==1){
+			
+			//클릭 -> 좌표 -> 고양이 생성
+			var cat = document.createElement("img");
+			cat.setAttribute("src","../images/catty01.png");
+			
+			cat.style.position = "absolute";
+			cat.style.left = event.clientX -64 + "px";
+			cat.style.top = event.clientY -64 + "px";
+			
+			document.body.appendChild(cat);
+			
+		}else if(event.buttons ==2){
+			
+			//마우스 우측 버튼 -> 기본행동 
+			// : 상황에 따라 보여지는 메뉴(Context Menu) 
+			document.body.removeChild(event.srcElement);
+			
+		}
+		
+	};
+	
+	//마우스 오른쪽 버튼 -> 메뉴 보이기 직전에 발생하는 이벤트 
+	window.oncontextmenu = function(){
+		//event.preventDefault();
+		return false;
+	};
+
+</script>
+</head>
+<body>
+<!--ex47_style.htm-->
+<!-- 태그 동적 생성&삭제 -->
+</body>
+</html>

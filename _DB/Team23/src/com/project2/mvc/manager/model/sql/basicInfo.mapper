@@ -1,0 +1,26 @@
+basicInfo.courseList|{call proc_list_course(?)}
+basicInfo.subjectList|{call proc_list_subject(?)}
+basicInfo.classRoomList|{ call proc_list_class_room(?)}
+basicInfo.bookList|{call proc_list_book(?)}
+basicInfo.publisherList|{call proc_list_publisher(?)}
+basicInfo.courseAdd|{call proc_add_course(?,?)}
+basicInfo.subjectAdd|{ call proc_add_subject(?,?) }
+basicInfo.classRoomAdd|{ call proc_add_class_room(?,?,?) }
+basicInfo.publisherAdd|{ call proc_add_pub(?,?) }
+basicInfo.CHECK_PUBLISHER|{ call PROC_CHECK_PUBLISHER(?,?) }
+basicInfo.bookAdd|{ call proc_add_book(?, ?, ?,?) }
+basicInfo.courseDel|{ call proc_del_course(?,?) }
+basicInfo. subjectDel|{ call proc_del_subject(?,?) }
+basicInfo.classRoomDel|{ call proc_del_class_room(?,?) }
+basicInfo.bookDel|{ call proc_del_book(?, ?) }
+basicInfo.publisherDel|{ call proc_del_publisher(?, ?) }
+basicInfo.courseEdit|{ call proc_edit_course(?, ?, ?) }
+basicInfo.subjectEdit|{ call proc_edit_subject(?, ?, ?) }
+basicInfo.classRoomEdit|{ call proc_edit_class_room(?, ?, ?, ?) }
+basicInfo.bookEdit|{ call proc_edit_book(?, ?, ?, ?,?) }
+basicInfo.publisherEdit|{call proc_edit_pub(?, ?, ?) }
+basicInfo.courseEditOriginal|{call PROC_EDIT_COURSE_ORIGINAL(?,?)}
+basicInfo.subjectEditOriginal|{call PROC_EDIT_SUBJECT_ORIGINAL(?,?)}
+basicInfo.classRoomEditOriginal|{call PROC_EDIT_class_room_ORIGINAL(?,?)}
+basicInfo.bookEditOriginal|{call PROC_EDIT_book_ORIGINAL(?,?)}
+basicInfo.publisherEditOriginal|{call PROC_EDIT_pub_ORIGINAL(?,?)}

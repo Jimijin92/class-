@@ -1,0 +1,24 @@
+/* main.css */
+
+#menu{
+	padding-bottom: 15px;
+	border-bottom: 1px solid black;
+}
+#menu ul{
+	list-style-type: none;
+	padding: 0;
+}
+#menu ul li{
+	float: left;
+	width: 19%;
+	text-align: center;
+}
+footer{
+	text-align: center;
+	margin:30px 0;
+}
+
+section{
+	min-height: 500px;
+	padding: 20px;
+}

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#box {
+		border: 10px solid black;
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 700px;
+		height: 100px;
+		overflow: hidden;
+	}
+	
+	.item {
+		width: 100px;	height: 100px;
+		float: left;
+		transition: all 1s;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	
+	#box:hover .item {
+		transform: translate(0px, 0px);
+	}
+	
+	
+	#item1 { 
+		background-color: red; 
+		z-index: 7;
+	}
+	#item2 { 
+		background-color: orange;
+		transform: translate(-100px, 0px);
+		z-index: 6;
+		width: 200px;
+	}
+	#item3 { 
+		background-color: yellow; 
+		transform: translate(-200px, 0px);
+		z-index: 5;
+		transition-delay: 1s;
+		width: 300px;
+	}
+	#item4 { 
+		background-color: green; 
+		transform: translate(-300px, 0px);
+		z-index: 4;
+		transition-delay: 2s;
+		width: 400px;
+	}
+	#item5 { 
+		background-color: blue; 
+		transform: translate(-400px, 0px);
+		z-index: 3;
+		transition-delay: 3s;
+		width: 500px;
+	}
+	#item6 { 
+		background-color: indigo; 
+		transform: translate(-500px, 0px);
+		z-index: 2;
+		transition-delay: 4s;
+		width: 600px;
+	}
+	#item7 { 
+		background-color: violet; 
+		transform: translate(-600px, 0px);
+		z-index: 1;
+		transition-delay: 5s;
+		width: 700px;
+	}
+	
+</style>
+</head>
+<body>
+	<h1>transition-delay: 1s(animation-delay: 1s)</h1>
+	<div id="box">
+		<div id="item1" class="item"></div>
+		<div id="item2" class="item"></div>
+		<div id="item3" class="item"></div>
+		<div id="item4" class="item"></div>
+		<div id="item5" class="item"></div>
+		<div id="item6" class="item"></div>
+		<div id="item7" class="item"></div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

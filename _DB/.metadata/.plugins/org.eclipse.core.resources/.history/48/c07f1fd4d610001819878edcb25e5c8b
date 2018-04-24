@@ -1,0 +1,58 @@
+package com.project2.mvc;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import com.project2.mvc.model.DBUtil;
+
+import oracle.jdbc.internal.OracleTypes;
+
+public class MainClass {
+	
+	public static void main(String[] args) {
+		
+		m4();
+		
+	}
+
+	
+private static void m4() {
+		
+		//4. 커서 반환
+		
+		Connection conn = null;
+		CallableStatement stat = null;
+		
+		try {
+			
+			conn = DBUtil.open();
+		
+			
+			String sql = "{ proc_list_course(?) }";
+			stat = conn.prepareCall(sql);
+			
+			stat.registerOutParameter(1, OracleTypes.CURSOR);
+			
+			stat.executeQuery();
+			
+			ResultSet rs = (ResultSet)stat.getObject(1);
+			
+			while (rs.next()) {
+				System.out.println(rs.getString(1));
+			}
+			
+			rs.close();
+			stat.close();
+			conn.close();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+	}
+	
+	
+	
+}

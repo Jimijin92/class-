@@ -1,0 +1,6 @@
+#
+#Tue Jan 02 15:00:22 KST 2018
+front-famaily=\uB098\uB214\uACE0\uB515\uCCB4
+autosave=30
+path=C\:\\Util\\Run
+language=ko

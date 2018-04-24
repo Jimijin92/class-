@@ -1,0 +1,90 @@
+package com.manager;
+
+import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.common.Manager;
+import com.common.Student;
+import com.common.StudentAddInfor;
+import com.io.*;
+
+public class ComManagerMenu {
+
+   private static Scanner scan;
+         //매니저 기본정보 넣은 리스트
+   static {
+      scan = new Scanner(System.in);
+      
+   }
+   
+   
+   public static void main(String[] args) {
+      //메뉴 시작전 학생 기본정보.dat 와 학생 추가정보.dat 읽어서 메모리에 옮기기
+      ComInManager.load();
+      //System.out.println(ComInManager.getManagerlist());
+      boolean loop = true;
+      
+      while (loop) {
+         
+         System.out.println("============================");
+         System.out.println("관리자");
+         System.out.println("============================");
+         System.out.println("1.회원 목록");
+         System.out.println("2.통계");
+         System.out.println("3.블랙리스트 관리");
+         System.out.println("4.마이페이지");
+         System.out.println("5.캘린더 보기");
+         System.out.println("선택 : ");
+         
+         String sel = scan.nextLine();
+         
+         if(sel.equals("1")) listMember();
+         else if (sel.equals("2")) statistics();
+         else if (sel.equals("3")) blacklist();
+         else if (sel.equals("4")) myPage();
+         else if (sel.equals("5")) diary();
+         else loop = false; //메뉴탈출    
+         
+      }//while
+      
+      System.out.println("프로그램 종료");
+   
+   }//main
+
+
+   
+private static void listMember() {
+	
+	
+}
+
+
+private static void statistics() {
+	
+	
+}
+
+
+private static void blacklist() {
+	
+	
+}
+
+
+private static void myPage() {
+	
+	
+}
+
+
+private static void diary() {
+	
+	
+}
+   
+}//ComManagerMenu
+   
+   

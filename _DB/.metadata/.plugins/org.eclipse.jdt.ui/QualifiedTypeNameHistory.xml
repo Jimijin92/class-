@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.beans.Statement"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="com.test.mvc.model.DBUtil"/>
+    <fullyQualifiedTypeName name="com.test.mvc.model.DataSource"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.test.mvc.member.model.MemberDAO"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.test.mvc.member.auth.Auth"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.DataSource"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.manager.model.OpenCouresInfoDAO"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.TblManagerDTO"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.TblClassRoomDTO"/>
+    <fullyQualifiedTypeName name="java.util.prefs.BackingStoreException"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.manager.BasicInfoClass"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.TblCourseDTO"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.TblOpenCourseDTO"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.manager.model.OpenCourseInfoDAO"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.manager.model.TeacherManagerDAO"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.view.MainView"/>
+    <fullyQualifiedTypeName name="java.text.ParseException"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.manager.model.BasicInfoDAO"/>
+    <fullyQualifiedTypeName name="oracle.jdbc.internal.OracleTypes"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.TblTeacherDTO"/>
+    <fullyQualifiedTypeName name="com.project2.mvc.model.TblAvaSubjectDTO"/>
+    <fullyQualifiedTypeName name="java.sql.CallableStatement"/>
+</qualifiedTypeNameHistroy>

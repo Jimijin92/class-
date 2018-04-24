@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+body{
+	display: block;
+	margin: 8px;
+} 
+
+#tbl1{
+	
+	width: 145px;
+	height: 98px;
+}
+
+#tbl2{
+	
+	width: 145px;
+	height:147px;
+}
+
+#weather{
+	margin-bottom: 3px;
+	margin-right: 3px;
+	margin-left: 12px;
+}
+
+#icon1{
+	display: inline-block;
+	width: 14px;
+	height: 17px;
+	background-image: url(../images/ico_etc.png);
+	background-repeat: no-repeat;
+	background-position: left 2px;
+}
+
+#content{
+	font-family: 돋움;
+	font-size: 11px;
+	color: #858585;
+	text-align: center;
+	letter-spacing:-1px;
+}
+
+table tr:first-child {
+    height: 33px;
+    background-color: #F9F9F9;
+}
+
+table {
+	/* border: 1px solid #DDDDDD; */
+    border-collapse: collapse;
+    width: 145px;
+}
+
+#tbl1{
+	margin-top: 10px;
+	margin: 0px auto;
+	border: 1px solid #DDDDDD;
+} 
+
+#tbl2{
+	margin-top: 10px;	
+	margin: 0px auto;
+} 
+
+#tbl2 td{
+	padding : 0px;
+	line-height: 0px; 
+} 
+
+#tbl2 #village #helpicon{
+	float: right;
+	margin-right: 8px;
+	margin-top: 2px;
+}
+
+/* #tbl2 tr td img{
+	margin: 0px;
+	border-collapse: collapse;
+} */
+
+#tbl2 tr:first-child{
+border: 1px solid #DDDDDD; 
+margin-top: 10px;
+margin: 0px auto;
+
+}
+
+#tbl2 tr:first-child td {
+    padding-left: 12px;
+}
+
+/* #tbl2 #thumb img{
+	margin: 0px 0px;
+} */
+
+#tbl2 #village img{
+	margin: 0px -1px;
+}
+
+ 
+
+
+</style>
+</head>
+<body>
+<!--question2-->
+<table id = "tbl1">
+	<tr>
+		<td>
+			<img src = "../images/h3_zone_weather.gif"  id = "weather"><span id ="icon1"></span>
+		</td>
+	</tr>
+
+	<tr>
+		<td id = "content">로그인 후 이용해주세요.</td>
+	</tr>
+</table>
+
+<table id = "tbl2">
+	<tr id = "village">
+		<td>
+			<img src = "../images/h3_view_village.gif">
+			<img src = "../images/btn_help.gif"  id = "helpicon">
+		</td>
+	</tr>
+	
+	
+	<tr id = "thumb">
+		<td>
+			<img src = "../images/392669_thumb_DA.jpg">
+			<img src = "../images/img_left_help.gif" >
+			<img src = "../images/img_left_weatheri.gif">
+		</td>
+	</tr>
+
+</table>
+
+
+
+</body>
+</html>

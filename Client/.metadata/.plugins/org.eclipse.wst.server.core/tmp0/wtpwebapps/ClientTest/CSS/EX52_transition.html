@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+#box{
+	border: 10px solid black;
+	width: 400px;
+	height: 800px;
+}
+
+#ball{
+	border: 10px solid black;
+	background: yellow;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	/* margin: 0px auto; */
+	
+	animation-name: keyBall;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+	/* animation-timing-function: ease-in; 땅에서 튕긴것처럼 */ 
+	animation-timing-function: ease-out;/* 고무줄에 매단것처럼 */
+	animation-timing-function: ease-out;/* 고무줄에 매단것처럼 */
+}
+
+@keyframes keyBall{
+
+/* 
+	from{transform: translate(0px, 0px)}
+	to{transform: translate(0px, 730px)}
+ */
+ 
+ 0%{transform: translate(0px, 0px); transition-timing-function: ease-in;}
+ /* 50%{transform: translate(0px, 0px);} */
+ 33%{transform: translate(110px, 730px); transition-timing-function: ease-out;}
+ 66%{transform: translate(220px, 0px); transition-timing-function: ease-in;}
+ 100%{transform: translate(330px, 730px); transition-timing-function: ease-out;}
+}
+
+
+
+</style>
+</head>
+<body>
+<!--ex52_transition.htm-->
+<div id= "box">
+	<div id="ball"></div>
+</div>
+
+</body>
+</html>

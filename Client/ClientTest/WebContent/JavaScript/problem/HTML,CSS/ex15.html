@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#box {
+		border: 10px solid black;
+		width: 700px;
+	}
+	
+	.item {
+		width: 100px;	height: 100px;
+		float: left;
+		transition: all 1s;
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	
+	#box:hover .item {
+		transform: translate(0px, 0px);	
+	}
+	
+	#box:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+	#item1 { 
+		background-color: red; 
+		z-index: 7;
+	}
+	#item2 { 
+		background-color: orange;
+		transform: translate(-100px, 0px);
+		z-index: 6;
+	}
+	#item3 { 
+		background-color: yellow; 
+		transform: translate(-200px, 0px);
+		z-index: 5;
+	}
+	#item4 { 
+		background-color: green; 
+		transform: translate(-300px, 0px);
+		z-index: 4;
+	}
+	#item5 { 
+		background-color: blue; 
+		transform: translate(-400px, 0px);
+		z-index: 3;
+	}
+	#item6 { 
+		background-color: indigo; 
+		transform: translate(-500px, 0px);
+		z-index: 2;
+	}
+	#item7 { 
+		background-color: violet; 
+		transform: translate(-600px, 0px);
+		z-index: 1;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="box">
+		<div id="item1" class="item"></div>
+		<div id="item2" class="item"></div>
+		<div id="item3" class="item"></div>
+		<div id="item4" class="item"></div>
+		<div id="item5" class="item"></div>
+		<div id="item6" class="item"></div>
+		<div id="item7" class="item"></div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

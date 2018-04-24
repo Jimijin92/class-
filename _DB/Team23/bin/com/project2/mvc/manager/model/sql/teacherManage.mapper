@@ -1,0 +1,17 @@
+teacherManage.teacherList|{call proc_list_teacher(?)}
+teacherManage.teacherListMy|{call proc_list_teacher_manager(?, ?)}
+teacherManage.teacherAvaSubject|{call PROC_teacher_ava_subject(?,?)}
+teacherManage.teacherOpenCourse|{call proc_list_teacher_course(?,?)}
+teacherManage.check|{call PROC_TEACHER_LIST_CHECK(?,?)}
+teacherManage.checkMy|{call PROC_TEACHER_LIST_CHECK_MY(?,?,?)}
+teacherManage.teacherOpenSubject|{call proc_list_teacher_open_subject(?, ?)}
+teacherManage.teacherAddCheck|{call proc_add_teacher_check(?,?)}
+teacherManage.teacherAdd|{call proc_add_teacher(?,?,?)}
+teacherManage.teacherDel|{call PROC_DEL_TEACHER(?)}
+teacherManage.teacherDelAva|{call PROC_AVA_CHANGE(?,?)}
+teacherManage.teacherEditOriginal|{call proc_edit_teacher_original(?, ?)}
+teacherManage.teacherEdit|{call proc_edit_teacher(?,?,?,?)}
+teacherManage.avaSubEdit|{call proc_ava_subject_edit(?,?,?,?)}
+teacherManage.avaSubDel|{call proc_DEL_AVA_SUB(?,?,?)}
+teacherManage.avaSubAdd|{call PROC_ADD_AVA_SUBJECT(?,?,?)}
+teacherManage.teacherListOne|{call proc_list_teacher_one(?,?)}

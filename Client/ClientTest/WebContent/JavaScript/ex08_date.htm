@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+<script>
+
+/*  
+ 날짜 시간 자료형
+ - 객체
+ - Date
+
+ */
+//현재 시간
+var now = new Date();//Calendar.getInstance();
+console.log(now);//현재시간 출력
+
+//c.get(Calendar.YEAR);
+console.log(now.getYear());				//2자리 년도(2000년 이전 사용)
+console.log(now.getFullYear());			//4자리 년도
+console.log(now.getMonth());			//월(0~11)
+console.log(now.getDate());				//일
+console.log(now.getDay());				//요일(일(0) ~ 토(6))
+console.log(now.getHours());			//시
+console.log(now.getMinutes());			//분
+console.log(now.getSeconds());			//초
+console.log(now.getMilliseconds());	// 1/1000초
+console.log(now.getTime());				//틱(ms)
+
+//출력
+// - toString()
+console.log(now);
+console.log(now.toString());
+
+console.log(now.toDateString());//년월일
+console.log(now.toTimeString());//시분초
+
+//우리나라에서 많이 쓰는 형식
+console.log(now.toLocaleString());//toString()에 대응
+console.log(now.toLocaleDateString());//년월일
+console.log(now.toLocaleTimeString());//시분초
+
+//특정 시각 만들기 
+var christmas = new Date();
+christmas.setMonth(11, 25); //월, 일 둘다 써줘야함 , 월은 1빼고 (12월 -1 = 11)
+console.log(christmas.toLocaleString());
+
+var birthday = new Date(1990, 4, 20);//년월일
+var birthday2 = new Date(1990, 4, 20, 12, 20, 0); //시분초까지 지원
+console.log(birthday);
+console.log(birthday2);
+
+//연산
+console.log(christmas - now); //ms단위, 틱값
+console.log(christmas.getTime()- now.getTime());
+console.log((christmas - now)/1000/60/60/24); // 밀리초/초/분/시/
+
+//오늘 커플 -> 100일 뒤?
+console.log(now.getTime() + (100*24*60*60*1000)) //(100*24*60*1000)= 100일치에 해당하는 밀리초 
+
+var ani = new Date();
+ani.setTime(now.getTime() + (100*24*60*60*1000));
+console.log(ani.toLocaleString());
+
+</script>
+</head>
+<body>
+<!--ex08_date.htm-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

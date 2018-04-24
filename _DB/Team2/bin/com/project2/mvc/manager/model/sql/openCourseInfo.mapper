@@ -1,0 +1,15 @@
+openCourseInfo.openCourseList|{call PROC_list_open_course(?)}
+openCourseInfo.openCourseSubjectList|{call PROC_list_course_open_subject(?, ?)}
+openCourseInfo.checkOpenCourseChoice|{call PROC_CHECK_OPEN_COURSE_CHOICE(?, ?)} 
+openCourseInfo.openCourseStudentList|{call PROC_list_course_student(?,?)}
+openCourseInfo.openCourseListMy|{call PROC_list_open_course_my(?, ?)}
+openCourseInfo.checkOpenCourseChoiceMy|{call PROC_CHOICE_MY(?, ?, ?)} 
+openCourseInfo.openCourseAdd|{call proc_add_open_course(?,?,?,?,?,?)}
+openCourseInfo.avaClassRoomCheck|{call TBL_AVA_CLASS_ROOM_CHECK(?,?,?,?)}
+openCourseInfo.avaClassRoom|{call PROC_NOW_AVA_CL_ROOM(?,?,?)}
+openCourseInfo.courseChoiceCheck|{call PROC_COURSE_CHOICE_CHECK(?,?)}
+openCourseInfo.avaTeacher|{call PROC_TBL_AVA_TEACHER(?,?,?)}
+openCourseInfo.avaTeacherCheck|{call AVA_TEACHER_CHECK(?,?,?,?)}
+openCourseInfo.openCourseDel|{call proc_del_open_course(?,?,?)}
+openCourseInfo.openCourseClEdit|{call PROC_OPEN_COURSE_CL_CHANGE(?,?)}
+openCourseInfo.returnPeriod|{call PROC_RETURN_PERIOD(?,?,?)}

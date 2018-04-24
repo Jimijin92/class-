@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	fieldset { background-color: white; }
+</style>
+<script src="js/cookie.js"></script>
+<script>
+
+	var num = 100; 
+	
+	function save() {
+		//쿠키종류
+		//1. 메모리 쿠키
+		//		- 현재 쿠키
+		//		- 브라우저가 닫힐때까지 유효함
+		//		- 만료 시간이 없음
+		
+		//2. 하드 쿠키
+		//		- 물리적으로 하드 디스크에 저장(*.txt)
+		//		- 브라우저가 닫혀도 계속 사용이 가능
+		//		- 만료 시간 있음 
+		setCookie("data", document.all.txt1.value, 100);
+		//setCookie("data", document.all.txt1.value, -1);//삭제하는 함수 없고, 쿠키 지우고 싶으면 음수값 주면됨
+	}
+	
+	function load() {
+		alert(num);
+		alert(getCookie("data"));
+	}
+	
+</script>
+</head>
+<body>
+	<!-- ex33_a.htm -->
+	<h1>ex33_a.htm</h1>
+	
+	<fieldset>
+		<legend>페이지 이동</legend>
+		<a href="ex33_a.htm">A 페이지</a>
+		<a href="ex33_b.htm">B 페이지</a>
+		<a href="ex33_c.htm">C 페이지</a>
+	</fieldset>
+	
+	<hr>
+	<input type="text" name="txt1">
+	<input type="button" value="저장하기" onclick="save();">
+	<input type="button" value="불러오기" onclick="load();">
+	
+</body>
+</html>

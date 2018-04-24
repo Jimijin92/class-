@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#box {
+		border: 1px solid black;	width: 800px;		padding: 30px;	
+		margin: 20px auto;
+	}
+	#box input { width: 30px;		height: 30px; }
+	#box label { font-size: 2em; }
+	
+	#box img { opacity: .2; transition: all 1s; border-radius: 50%; }
+	
+	#btnDog:checked ~ .dog { opacity: 1; border-radius: 0%; }
+	#btnCat:checked ~ .cat { opacity: 1; border-radius: 0%; }
+	
+</style>
+</head>
+<body>
+	
+	<div id="box">
+		<input type="radio" value="강아지" id="btnDog" name="btn"> <label for="btnDog">강아지</label>
+		<input type="radio" value="고양이" id="btnCat" name="btn"> <label for="btnCat">고양이</label>
+		<hr>
+		<img src="images/cat01.jpg" class="cat">
+		<img src="images/dog01.jpg" class="dog">
+		<img src="images/cat02.jpg" class="cat">
+		<img src="images/dog02.jpg" class="dog">
+		<img src="images/dog03.jpg" class="dog">
+		<img src="images/cat03.jpg" class="cat">
+		<img src="images/cat04.jpg" class="cat">
+		<img src="images/dog04.jpg" class="dog">
+		<img src="images/cat05.jpg" class="cat">
+		<img src="images/dog05.jpg" class="dog">
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+

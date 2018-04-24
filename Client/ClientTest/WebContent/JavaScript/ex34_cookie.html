@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#tbl1{
+		border: 1px solid gray;
+		border-collapse: collapse;
+		width: 300px;
+	}
+	#tbl1 th, #tbl1 td{
+		border: 1px solid gray;
+		padding: 5px;
+	}
+	
+	#tbl1 th{
+		width: 80px;
+		background: #eee;
+	}
+
+	#txtid, #txtpw{
+		width: 100px;
+	}
+
+	#btnlogin{
+		width: 50px;
+		height: 40px;
+		display: block;/* 요거하면 마진 줄수 있음 */
+		margin: 0px auto;/* 인라인 태그를 혼자 가운데 정렬 */
+	}
+	
+	/* 가운데 정렬하기, but이방법은 나중에 못찾을 가능성이 있는 방법이라서 비추
+	#tbl1 tr:first-child td:last-CHILD {
+		text-align: center;
+	}
+	 */
+	
+</style>
+<script src="js/cookie.js"></script>
+<script>
+
+	var txtid, txtpw, btnlogin, cbid;
+	
+	window.onload = function(){
+		
+		txtid = document.all.txtid;
+		txtpw = document.all.txtpw;
+		btnlogin =document.all.btnlogin;
+		cbid = document.all.cbid;
+
+		txtid.focus();
+		
+		//로그인 클릭
+		btnlogin.onclick = function(){
+			//로그인 처리 진행했다고 가정 
+			if((txtid.value == "hong" && txtpw.value == "1234") || (txtid.value == "hong" && txtpw.value == "1234")){
+				
+				//아이디 기억하기(로그인을 성공했을 때만...)
+				if(cbid.checked){
+					//아이디 기억하기 -> 아이디를 어딘가에 저장 
+					//쿠키에 저장하기
+					setCookie("id", txtid.value, 365)//exdays -> 아이디를 기억하는 시간
+				}else{
+					//더이상 아이디를 기억하지 않겠다.
+					setCookie("id","",-1);//기존에 있던 아이디라는 쿠키값을 찾아서 강제 만료시키기
+					
+				}
+				
+				
+				
+				
+				//로그인 성공
+				alert("로그인 성공했습니다.");
+				location.href = "ex33_a.htm"//시작페이지
+			}else{
+				//로그인 실패
+				alert("로그인 실패했습니다.");
+			}//if
+		}//btnlogin.onclick
+		
+		//쿠키에 아이디가 저장되어 있으면 미리 채워넣기
+		//쿠키에 아이디가 있는지 어떻게 체크할지?
+				//alert(getCookie("id")=="");
+				//alert(getCookie("id")==null);
+				//alert(getCookie("id")==undefined);
+		
+				if(getCookie('id') != ""){
+					//지난번 로그인 때 아이디 기억하기를 체크했다면..
+					txtid.value = getCookie("id");
+					txtpw.focus();
+					cbid.checked = true;
+				}else{
+					txtid.focus();
+				}
+				
+	}//window.onload
+
+</script>
+</head>
+<body>
+<!---->
+<h1>자동로그인 or 아이디 기억하기</h1>
+
+<table id = "tbl1">
+	<tr>
+		<th>아이디</th>
+		<td><input type = "text" name= "txtid" id = "txtid" tapindex="1"></td>
+		<td rowspan = "2"><input type = "button" value = "login" name= "btnlogin" id = "btnlogin"></td>
+	</tr>
+	<tr>
+		<th>암호</th>
+		<td><input type = "password" name="txtpw"  id="txtpw" tapindex="2"></td>
+	</tr>
+	<tr>
+		<td colspan = "3">
+			<input type = "checkbox" name= "cbid" id = "cbid">
+			<label for="cbid">아이디 기억하기</label>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

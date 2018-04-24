@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	#box1{
+		/* text-shadow: h-shadow v-shadow blur color; */
+		text-shadow: 0px 0px 5px gray;
+	}
+
+	#box2{
+		border: 0px solid black;
+		box-shadow: 2px 2px 3px gray;
+	}
+	
+	#p1 span:hover{
+		color: red;
+		text-shadow: 2px 2px 2px rgba(255,0,0,5);
+	}
+	
+	input{
+		width:300px;
+		border: 0px;
+		outline: none;
+		padding: 4px;
+		background-color: black;
+		text-shadow: 1px 1px 1px white;
+	
+	}
+	
+	#p2, #p3{
+		border: 1px solid black;
+		width: 300px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	
+	#p2{text-overflow: clip;}
+	#p3{text-overflow: ellipsis;} /* 제한된 영역에서 오버플로우 됐을 때 ....찍어줌 */	
+
+</style>
+</head>
+<body>
+<!--ex36_shadow.htm-->
+
+	<!-- (p#p$>lorem10)*2 -->
+	<p id="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non dolor?</p>
+	<p id="p3">Tenetur aliquam libero eaque molestiae laborum. Reiciendis numquam dolore reprehenderit!</p>
+	
+	
+	
+	<hr>
+	
+	<input type="text"> 
+	
+	<!-- div#box${HTML5 & CSS3}*3 -->
+	<div id="box1">HTML5 & CSS3</div>
+	<div id="box2">HTML5 & CSS3</div>
+	<div id="box3">HTML5 & CSS3</div>
+
+	<!-- p#p1>lorem100 -->
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur <span>adipisicing</span> elit. Consequatur tempore vitae nisi harum perspiciatis quam est quae nostrum facilis 
+	culpa! Voluptates ducimus asperiores veritatis possimus excepturi in <span>quibusdam</span> laudantium placeat assumenda ipsam necessitatibus dolorem eius 
+	minima eaque et natus quis esse amet modi voluptate voluptatibus consectetur illum nobis <span>expedita</span> adipisci optio facere molestias aspernatur aliquam 
+	explicabo corporis aliquid id impedit quo maxime fugiat vitae dicta eum vel reiciendis <span>ullam</span> hic delectus ipsum accusantium laboriosam magnam 
+	blanditiis debitis harum nihil earum? Quisquam quis excepturi recusandae id animi quas itaque aut eum <span>quae</span> ratione aspernatur quasi culpa veritatis! 
+	Sequi dignissimos quas nam.</p>
+
+
+</body>
+</html>

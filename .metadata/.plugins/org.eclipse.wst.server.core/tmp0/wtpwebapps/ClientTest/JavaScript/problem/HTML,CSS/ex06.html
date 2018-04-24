@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<style>
+
+	#news {
+		border: 0px solid black;
+	}
+	
+	#news .item {
+		border: 0px solid orange;
+		width: 700px;
+		border-top: 1px solid #eee;
+		margin-bottom: 30px;
+		padding-top: 30px;
+	}
+	
+	#news .item .header{
+		border: 0px solid red;
+		margin-bottom: 5px;
+	}
+	
+	#news .item .header > span:nth-child(1) {
+	
+	}
+	
+	#news .item .header > span:nth-child(2) {
+		float: right;
+	}
+	
+	#news .item .header h3 {
+		display: inline;
+		font-size: 16px;
+		color: #333;
+		margin-right: 6px;
+	}
+	
+	#news .item .header > span:nth-child(1) > :nth-child(2) {
+		color: #777;
+		font-size: 12px;
+	}
+	
+	#news .item .header > span:nth-child(2) > :nth-child(1) {
+		display: inline-block;
+		width: 24px;
+		height: 19px;
+		background-image: url("images/btn_main_move.gif");
+	}
+	
+	#news .item .header > span:nth-child(2) > :nth-child(2) {
+		display: inline-block;
+		width: 24px;
+		height: 19px;
+		background-image: url("images/btn_main_move.gif");
+		background-position: -72px 0px;
+	}
+	
+	#news .item .header > span:nth-child(2) > :nth-child(3) {
+		display: inline-block;
+		width: 24px;
+		height: 19px;
+		background-image: url("images/btn_main_move.gif");
+		background-position: -96px 0px;
+	}
+	
+	
+	#news .item .pic {
+		border: 0px solid green;
+		float: left;
+		width: 150px;
+		margin-right: 10px;
+	}
+	
+	#news .item .pic div {
+		font-size: 13px;
+		color: #555;
+		line-height: 140%;
+		margin-top: 5px;
+	}
+	
+	#news .item .list{
+		border: 0px solid blue;
+		float: left;
+		width: 530px;
+	}
+	
+	#news .item .list .listitem {
+		margin-bottom: 5px;
+	}
+	
+	#news .item .list .listitem span:nth-child(1) {
+		color: darkblue;
+		font-size: 15px;
+		font-weight: bold;
+		letter-spacing: -1px;
+	}
+	
+	#news .item .list .listitem span:nth-child(2) {
+		color: #555;
+		font-size: 12px;
+		float: right;
+	}
+
+</style>
+
+</head>
+
+<body>
+
+	<!-- ex54_naver.htm -->
+	
+	<div id="news">
+		
+		<div class="item">
+			<div class="header">
+				<span>
+					<h3>경제</h3> 
+					<span>일반 | 금융 | 생활경제</span>
+				</span>
+				<span>
+					<span></span><span></span><span></span>
+				</span>
+			</div>
+			<div class="pic">
+				<img src="images/2459825.jpg">
+				<div>내수·수출 기댈 곳 없다…<br>경영 악화…</div>
+			</div>
+			<div class="list">
+				<div class="listitem">
+					<span>국내 투자자, 선강퉁 2주 거래 누적액 392억원…가파른 내리막길</span>
+					<span>뉴시스</span>
+				</div>
+				<div class="listitem">
+					<span>3Q 전자지급 이용 '사상 최대'…○○페이 47%↑ <img src="images/ico_photo.gif"></span>
+					<span>포토아이뉴스24</span>
+				</div>
+				<div class="listitem">
+					<span>"연금저축 납입 곤란시 납입 중지·유예할 수 있어"</span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>'갈길 먼' 퇴직연금, 도입률 30% 미달…숙박·음식업 최저포토 <img src="images/ico_photo.gif"></span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>스마트폰으로 송금하고 결제하고…신종 전자지급 이용액 400억 육박</span>
+					<span>이데일리</span>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div><!-- .item -->
+		
+		<div class="item">
+			<div class="header">
+				<span>
+					<h3>경제</h3> 
+					<span>일반 | 금융 | 생활경제</span>
+				</span>
+				<span>
+					<span></span><span></span><span></span>
+				</span>
+			</div>
+			<div class="pic">
+				<img src="images/2459825.jpg">
+				<div>내수·수출 기댈 곳 없다…<br>경영 악화…</div>
+			</div>
+			<div class="list">
+				<div class="listitem">
+					<span>국내 투자자, 선강퉁 2주 거래 누적액 392억원…가파른 내리막길</span>
+					<span>뉴시스</span>
+				</div>
+				<div class="listitem">
+					<span>3Q 전자지급 이용 '사상 최대'…○○페이 47%↑ <img src="images/ico_photo.gif"></span>
+					<span>포토아이뉴스24</span>
+				</div>
+				<div class="listitem">
+					<span>"연금저축 납입 곤란시 납입 중지·유예할 수 있어"</span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>'갈길 먼' 퇴직연금, 도입률 30% 미달…숙박·음식업 최저포토 <img src="images/ico_photo.gif"></span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>스마트폰으로 송금하고 결제하고…신종 전자지급 이용액 400억 육박</span>
+					<span>이데일리</span>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div><!-- .item -->
+		
+		<div class="item">
+			<div class="header">
+				<span>
+					<h3>경제</h3> 
+					<span>일반 | 금융 | 생활경제</span>
+				</span>
+				<span>
+					<span></span><span></span><span></span>
+				</span>
+			</div>
+			<div class="pic">
+				<img src="images/2459825.jpg">
+				<div>내수·수출 기댈 곳 없다…<br>경영 악화…</div>
+			</div>
+			<div class="list">
+				<div class="listitem">
+					<span>국내 투자자, 선강퉁 2주 거래 누적액 392억원…가파른 내리막길</span>
+					<span>뉴시스</span>
+				</div>
+				<div class="listitem">
+					<span>3Q 전자지급 이용 '사상 최대'…○○페이 47%↑ <img src="images/ico_photo.gif"></span>
+					<span>포토아이뉴스24</span>
+				</div>
+				<div class="listitem">
+					<span>"연금저축 납입 곤란시 납입 중지·유예할 수 있어"</span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>'갈길 먼' 퇴직연금, 도입률 30% 미달…숙박·음식업 최저포토 <img src="images/ico_photo.gif"></span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>스마트폰으로 송금하고 결제하고…신종 전자지급 이용액 400억 육박</span>
+					<span>이데일리</span>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div><!-- .item -->
+		
+		<div class="item">
+			<div class="header">
+				<span>
+					<h3>경제</h3> 
+					<span>일반 | 금융 | 생활경제</span>
+				</span>
+				<span>
+					<span></span><span></span><span></span>
+				</span>
+			</div>
+			<div class="pic">
+				<img src="images/2459825.jpg">
+				<div>내수·수출 기댈 곳 없다…<br>경영 악화…</div>
+			</div>
+			<div class="list">
+				<div class="listitem">
+					<span>국내 투자자, 선강퉁 2주 거래 누적액 392억원…가파른 내리막길</span>
+					<span>뉴시스</span>
+				</div>
+				<div class="listitem">
+					<span>3Q 전자지급 이용 '사상 최대'…○○페이 47%↑ <img src="images/ico_photo.gif"></span>
+					<span>포토아이뉴스24</span>
+				</div>
+				<div class="listitem">
+					<span>"연금저축 납입 곤란시 납입 중지·유예할 수 있어"</span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>'갈길 먼' 퇴직연금, 도입률 30% 미달…숙박·음식업 최저포토 <img src="images/ico_photo.gif"></span>
+					<span>이데일리</span>
+				</div>
+				<div class="listitem">
+					<span>스마트폰으로 송금하고 결제하고…신종 전자지급 이용액 400억 육박</span>
+					<span>이데일리</span>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div><!-- .item -->
+	
+	</div><!-- #news -->
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

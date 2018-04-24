@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+<script>
+		
+	  var cat;//전역변수; 페이지가 닫힐때까지...	
+	  var n = 1;
+	  var number;
+     
+   window.onload = function(){
+      
+      var btn1, img1, img2;
+      
+      btn1 = document.all.btn1;
+      img1 = document.images["img1"]; //방번호로 찾을 수도 있지만 수정과정에서 방번호가 바뀌면 다 고쳐야 함, 명시적으로 식별자 사용할 것
+      img2 = document.images["img2"];
+      cat =  document.images["cat"];
+      number =  document.images["number"];
+      
+      btn1.onclick = function() {
+         
+         //console.log(img1.src); //http://localhost:8090/ClientTest/images3/switch.png
+         //console.log(img1.width); //300
+         //console.log(img1.height); //194
+         
+        //img1.src = "../images/switch_on.png";
+         
+         img1.width = 500;
+         img1.height = 500;
+      };
+      
+      //마우스 over/out 으로 스위치 조절 
+      //롤 오버 이미지
+      img2.onmouseover = function(){
+         
+         //img2.src = "../images3/switch_on.png";
+      };
+      
+      img2.onmouseout = function(){
+         
+         //img2.src = "../images3/switch_off.png";
+      };
+      
+      
+      /*
+      
+      //클릭으로 스위치 조절
+      img2.onclick = function(){
+         
+         if(getFileName(img2.src)=="switch_on.png") {
+            img2.src = "../images3/switch_off.png";
+            document.body.bgColor = "black";
+         } else {
+            img2.src = "../images3/switch_on.png";
+            document.body.bgColor = "white";
+         }
+      };
+      
+      
+      -> 리소스 이름이 (파일명) 계속 중복되는 문제점..
+         1. 인덱스
+         2. 키값
+      
+      */
+      
+      /*
+      
+      1. 인덱스
+      var filename = ["switch_off.png", "switch_on.png"];
+      filename[0] //off
+      filename[1] //on
+      
+      */
+      
+      
+      //2. 키값
+      var filename = [];
+      filename["on"] = "switch_on.png";
+      filename["off"] = "switch_off.png";
+      
+      img2.onclick = function(){
+         
+         if(getFileName(img2.src)==filename["on"]){
+            img2.src = "../images/" + filename["off"];
+         } else {
+            img2.src = "../images/" + filename["on"];
+         }
+      };
+      
+      cat.onclick = function(){
+    	  n++;
+    	  if(n > 5) n = 1;
+    	  cat.src = "../images/cat0" + n + ".jpg";
+      } 
+   };
+   
+   /*
+   	window.onkeydown = function(){
+   		if(event.keyCode == 39){
+   			//right
+   			//n++;
+   			//if(n > 5) n = 1;
+   			//cat.src ="../images/cat" + n + ".jpg";
+   			cat.click(); //cat.bnclick 호출 //누른것처럼 작동하게함 
+   		}else if(event.keyCode == 37){
+   			//left
+   			n--;
+   			cat.src = "../images/cat0" + n + ".jpg";
+   	}//window.onkeydown
+   	*/
+   	
+   	
+   	window.onkeydown = function(){
+   		if(event.keyCode == 39){
+   			//right
+   			n++;
+   			if(n > 5) {
+   				alert("마지막 이미지입니다.");
+   				n = 5;
+   			}
+   		}else if(event.keyCode == 37){
+   			//left
+   			n--;
+   			if(n < 1){
+   				alert("처음이미지입니다.");
+   				n = 1;
+   			}
+  
+   		}
+   		
+   		cat.src = "../images/cat0" + n + ".jpg";
+   	
+   		
+   		//console.log(event.keyCode);
+   		//0(48) ~ 9(57)
+   		if(event.keyCode >= 48 && event.keyCode <=57){
+   			number.src = "../images/" + (event.keyCode - 48) + ".png"
+   		}
+   		
+   		
+   	}//window.onkeydown
+   	
+   	
+   	
+   	
+   	
+   
+   function getFileName(path){
+      var index = path.lastIndexOf("/");
+      if (index > -1) {
+         return path.substr(index+1);
+      } else {
+         return null;
+      }
+   }
+
+</script>
+</head>
+<body>
+   <!-- ex25_image.html -->
+   
+   <!--  
+   
+   window : 창 제어
+      - screen : 화면 정보(크기)
+      - location : URL 제어(페이지 이동할 때 많이 씀)
+      - history : 히스토리 제어(방문 기록)
+      - document : 문서 객체(화면상에 보이는 모든것들의 최상위 객체)
+         - link : <a>
+         - anchor : <a>
+         - image : <img>
+   
+   -->
+   
+   <input type="button" value="테스트" name="btn1">
+   <hr>
+   <img src="../images/switch.png" name="img1">
+   <hr>
+   <img src="../images/switch_off.png" name="img2">
+   <hr>
+   <img src="../images/cat01.jpg" name="cat">
+   <hr>
+   <img src="../images/0.png" name="number">
+   
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#timer {
+		border: 1px solid gray;
+		width: 440px;
+		margin: 50px auto 20px auto;
+		padding: 5px;
+	}
+	#timer:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	#timer input, #timer span {
+		float: left;
+		font-size: 7em;
+	}
+	#timer input {
+		width: 130px;
+		border: 0px;
+		outline: none;
+	}
+	#timer span {
+		margin-top: -25px;
+	}
+	#btns {
+		width: 440px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	#btns input {
+		border: 1px solid #aaa;
+		background-color: white;
+		width: 30%;
+		height: 50px;
+		outline: none;
+		cursor: pointer;
+	}
+	#btns input:disabled {
+		background-color: #eee;
+		cursor: not-allowed;
+	}
+</style>
+<script>
+	
+</script>
+</head>
+<body>
+	<!--  -->
+	<div id="timer">
+		<input type="text" name="txt1" id="txt1">
+		<span>:</span>
+		<input type="text" name="txt2" id="txt2">
+		<span>:</span>
+		<input type="text" name="txt3" id="txt3">
+	</div>
+	<div id="btns">
+		<input type="button" value="시작" name="btn1">
+		<input type="button" value="멈춤" name="btn2" disabled>
+		<input type="button" value="종료" name="btn3" disabled>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

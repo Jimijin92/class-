@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	/*
+	
+	float
+	- 기존 출력 정책을 깨고, 기존의 위치에서 벗어나 원래 라인의 좌측 끝이나 우측 끝으로 이동해라. 
+	
+	*/
+	#hong{
+		float: right;
+	}
+	
+	#cat{
+		float: right;
+		/*
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 15px;
+		*/
+		/* margin: 15px 0px 15px 15px; */
+		margin: 15px;
+		margin-right: 0px;
+	}
+
+	.box{
+		border: 1px solid black;
+		width: 100px;
+		height: 100px;
+		float: left;
+	}
+	
+	/* #box3{float: right;}
+	#box4{float: right;} */
+
+	#links{margin-top: 30px;}
+	#links a{
+		border: 1px solid #aaa;
+		width: 150px;
+		height: 35px;
+		display: inline-block;
+		text-decoration: none;
+		color: black;
+		text-align: center;
+		padding-top: 15px;
+		/* margin-right: -6px; */
+		float: left;
+	}	
+</style>
+</head>
+<body>
+	<!--ex22_float.htm-->
+	
+	<p>안녕하세요. 반갑습니다. 안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. <img src="../images/catty04.png" id="cat" style= "float:right; margin:">반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	<span id = "hong">홍길동</span>입니다. 안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.
+	안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.안녕하세요. 반갑습니다.</p>
+	
+	<hr>
+	
+	<div id ="box1" class = "box">상자1</div>
+	<div id ="box2" class = "box">상자2</div>
+	<div id ="box3" class = "box">상자3</div>
+	<div id ="box4" class = "box">상자4</div>
+	<div id ="box5" class = "box">상자5</div>
+	
+	<div style= "clear:both;">다음 내용</div>
+	<div id="links">
+		<a href="#">링크</a>
+		<a href="#">링크</a>
+		<a href="#">링크</a>
+		<a href="#">링크</a>
+	</div>
+	
+	<div style="clear:both;">추가내용들...</div>
+</body>
+</html>

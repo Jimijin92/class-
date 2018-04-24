@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#box {
+		border: 10px solid black;
+		width: 1200px;
+		column-count: 3;
+		column-width: 400px;
+		column-gap: 0px;
+	}
+	
+	#box img.big {
+		width: 400px;
+	}
+	#box img.middle {
+		width: 200px;
+	}
+	#box img.small {
+		width: 100px;
+	}
+	
+	#box img {
+		display: block;
+		float: left;
+		border-radius: 20px;
+		opacity: .2;
+		transition: all 1s;		
+	}
+	#box img:hover {
+		opacity: 1;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="box">
+		<img src="images/cat02_big.jpg" class="big">
+		<img src="images/cat01.jpg" class="middle">
+		<img src="images/dog01.jpg" class="middle">
+		<img src="images/dog02.jpg" class="middle">
+		<img src="images/cat04.jpg" class="middle">
+		<img src="images/cat03_big.jpg" class="big">
+		<img src="images/cat04_big.jpg" class="big">
+		<img src="images/dog05.jpg" class="middle">
+		<img src="images/cat05.jpg" class="middle">
+		<div style="clear:both;"></div>
+	</div>
+</body>
+</html>

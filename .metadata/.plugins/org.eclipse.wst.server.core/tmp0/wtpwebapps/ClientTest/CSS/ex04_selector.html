@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+/*  
+2. id 선택자 
+- 태그에 명시된 id 속성을 검색하는 선택자
+- 태그명#아이디
+- 유일해야 한다. 
+*/
+
+/* h1#title1{color: blue;} */
+#title1{color: blue;}
+
+/*
+3. class 선택자
+- 태그에 명시된 class 속성을 검색하는 선택자
+- 태그명. 클래스
+- 하나 이상의 태그에 적용하기 위한 선택자
+
+나머지 선택자들을 위의 3가지 선택자의 조합으로 만든다. 
+*/
+
+/*p.content{color: yellow;}*/
+p.content{color: yellow;} /* 앞에 태그명 붙으면 태그명과 클래스 모두 일치하는 애만, 태그명 생략시 클래스명만 일치하는 애  */
+
+
+*{
+text-decoration: underline; /* 모든 태그 아래 줄치기 */
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<!-- ex04_selector.htm -->
+<h1 id = "title1">자기소개</h1>
+<p class="content">자기소개입니다. 자기소개입니다. 자기소개입니다.</p>
+
+<h1>회사소개</h1>
+<p class="content">회사소개입니다. 회사소개입니다. 회사소개입니다.</p>
+<p>회사소개입니다. 회사소개입니다. 회사소개입니다.</p>
+<div class = "content">div</div>
+<a href="" class = "content">link</a>
+
+</body>
+</html>

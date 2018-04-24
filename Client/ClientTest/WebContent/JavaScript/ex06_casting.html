@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+<script>
+/*  
+  //형변환, type Casting
+  //- 대부분 상황에서는 자바스크립트가 자동으로 형변환을 한다.(암시적 형변환)
+  // ex) "10"* 2
+  
+  //형변환 함수
+  //1. int parseInt()
+  //2. float parseFloat()
+ */
+ 
+ var n1 = 3.14;
+  console.log(parseInt(n1));
+  
+  n1=3.99;
+  console.log(parseInt(n1));
+  
+  console.log(Math.round(n1));
+  
+  var n2 = 10;
+  console.log(parseFloat(n2));
+  
+  var n3 = "10";
+  var n4 = 3.14;
+  
+  console.log(typeof n3);
+  console.log(typeof n4);
+  
+  console.log(parseInt(n3));
+  console.log(n3);
+  
+  console.log(parseInt(n4));
+  console.log(parseFloat(n4));
+
+	var n5 = "100점";
+	n5 = "95점입니다. 아까워요 ㅠㅠ";
+	//JavaScript는 Enter도 문장종결자(;)로 인식한다.
+	n5 = "오늘 시험을 봤는데 100점이다!!"; //NaN 숫자가 아니라는 표시 -> 처음에 나오는 숫자만을 형변환 시켜준다. 
+	console.log(parseInt(n5));
+	
+	//HTML과 CSS 조작 시 
+	var width = "200px";
+	console.log(width * 2);
+	console.log("200"*2);
+	console.log(parseInt(width)*2);	
+
+	console.log(parseFloat("1.5em")/2);
+	
+	//
+	var age ="20세";// X
+	age = "스무살";// X
+	age= 20;// 	O
+	age= "20";//
+	
+	//유효성 검사
+	console.log(isNaN(age)); //false -> 무조건 숫자로만 구성돼 있으면 false
+	
+	
+</script>
+</head>
+<body>
+<!--ex06_casting.htm-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

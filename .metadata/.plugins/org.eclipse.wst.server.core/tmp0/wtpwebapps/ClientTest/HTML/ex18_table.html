@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- ex18_table.html -->
+<!-- 
+테이블 병합(셀 병합)
+ -->
+ 
+ <h1>2X2 테이블</h1>
+ <table border="1" width="200"height="200">
+ 	<tr>
+ 		<td>1</td>
+ 		<td>2</td> 		
+ 	</tr>
+ 	
+ 	<tr>
+ 		<td>3</td>
+ 		<td>4</td> 		
+ 	</tr>
+ </table>
+ 
+ 
+ <!-- 가로병합 -->
+ <h1>2X2 테이블</h1>
+ <table border="1" width="200"height="200">
+ 	<tr>
+ 		<td colspan="2">1</td>
+ 	</tr>
+ 	
+ 	<tr>
+ 		<td>3</td>
+ 		<td>4</td> 		
+ 	</tr>
+ </table>
+ 
+ 
+ 
+ <!-- 셀 병합 시 주의점 : 모든 <tr>내의 <td>갯수는 동일하다.  -->
+ <!-- 세로병합 -->
+ <h1>2X2 테이블</h1>
+ <table border="1" width="200"height="200">
+ 	<tr>
+ 		<td rowspan ="2">1</td>
+ 		<td>2</td> 		
+ 	</tr>
+ 	
+ 	<tr>
+ 		<td>4</td> 		
+ 	</tr>
+ </table>
+ 
+ 
+ 
+ <h1>성적표</h1>
+ 
+ <table border="1" width="500">
+ 	<tr>
+ 		<th colspan="7">모의 고사 성적</th>
+ 	</tr>
+ 
+ 	<tr>
+ 		<td>번호</td>
+ 		<td>이름</td>
+ 		<td>과목</td>
+ 		<td>1학기</td>
+ 		<td>2학기</td>
+ 		<td>3학기</td>
+ 		<td>4학기</td>
+ 	
+ 	</tr>
+ 
+ 	<tr>
+ 		<td rowspan="3">1</td>
+ 		<td rowspan="3">홍길동</td>
+ 		<td>국어</td>
+ 		<td>80</td>
+ 		<td>90</td>
+ 		<td>85</td>
+ 		<td>88</td>
+ 	</tr>
+	
+ 	<tr>
+ 		
+ 		<td>영어</td>
+ 		<td>99</td>
+ 		<td>88</td>
+ 		<td>77</td>
+ 		<td>66</td>
+ 	</tr>
+ 	
+ 	<tr>
+
+ 		<td>수학</td>
+ 		<td>98</td>
+ 		<td>89</td>
+ 		<td>87</td>
+ 		<td>78</td>
+ 		
+ 	</tr>
+ 	
+ 	
+ 	<tr>
+ 		<td rowspan="3">1</td>
+ 		<td rowspan="3">홍길동</td>
+ 		<td>국어</td>
+ 		<td>80</td>
+ 		<td>90</td>
+ 		<td>85</td>
+ 		<td>88</td>
+ 	</tr>
+	
+ 	<tr>
+ 		
+ 		<td>영어</td>
+ 		<td>99</td>
+ 		<td>88</td>
+ 		<td>77</td>
+ 		<td>66</td>
+ 	</tr>
+ 	
+ 	<tr>
+
+ 		<td>수학</td>
+ 		<td>98</td>
+ 		<td>89</td>
+ 		<td>87</td>
+ 		<td>78</td>
+ 		
+ 	</tr>
+ 	
+ 	
+ 	
+ 	<tr>
+ 		<td rowspan="3">1</td>
+ 		<td rowspan="3">홍길동</td>
+ 		<td>국어</td>
+ 		<td>80</td>
+ 		<td>90</td>
+ 		<td>85</td>
+ 		<td>88</td>
+ 	</tr>
+	
+ 	<tr>
+ 		
+ 		<td>영어</td>
+ 		<td>99</td>
+ 		<td>88</td>
+ 		<td>77</td>
+ 		<td>66</td>
+ 	</tr>
+ 	
+ 	<tr>
+
+ 		<td>수학</td>
+ 		<td>98</td>
+ 		<td>89</td>
+ 		<td>87</td>
+ 		<td>78</td>
+ 		
+ 	</tr>
+
+ </table>
+ 
+ 
+ 
+ 
+</body>
+</html>

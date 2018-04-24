@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	#content {
+		border: 0px solid black;
+		width: 152px;
+		height: 252px;
+		overflow: hidden;
+	}
+	
+	#content:hover #innerBox {
+		transform: translate(-608px, 0px);
+	}
+	
+	#innerBox {
+		border: 0px solid red;
+		width: 760px;
+		transition: all 2s;
+	}
+	#innerBox:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+	/* 폴라로이드 */
+	.item {
+		border: 1px solid black;
+		border-radius: 3px;
+		box-shadow: 2px 2px 2px gray;
+		width: 150px;
+		height: 250px;
+		font-size: 14px;
+		color: #444;
+		float: left;
+	}
+	
+	.item img {
+		display: block;
+		margin: 20px auto;
+		box-shadow: -1px -1px 1px black;
+	}
+	
+	.item .txt {
+		margin: 0px 12px;
+		margin-bottom: 15px;
+	}
+	
+</style>
+</head>
+<body>
+	<!-- ex61.htm -->
+	<h1>Card</h1>
+	
+	<div id="content">
+		<div id="innerBox">
+		<div class="item">
+			<img src="images/rect_icon01.png" alt="" />
+			<div class="txt">Lorem ipsum dolor sit amet sit amet sit amet sit amet.</div>
+		</div>
+		<div class="item">
+			<img src="images/rect_icon02.png" alt="" />
+			<div class="txt">Perferendis tempora quo quae tempore.</div>
+		</div>
+		<div class="item">
+			<img src="images/rect_icon03.png" alt="" />
+			<div class="txt">Hic accusantium voluptatem ipsa non.</div>
+		</div>
+		<div class="item">
+			<img src="images/rect_icon04.png" alt="" />
+			<div class="txt">Facilis animi ea vitae mollitia?</div>
+		</div>
+		<div class="item">
+			<img src="images/rect_icon05.png" alt="" />
+			<div class="txt">Iste aliquam .</div>
+		</div>
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

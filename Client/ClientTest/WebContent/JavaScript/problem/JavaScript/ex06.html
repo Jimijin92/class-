@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#tbl1 {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	#tbl1 td {
+		border: 1px solid black;
+		width: 126px;
+		height: 126px;
+	}
+	#tbl1 td img {
+		display: block;
+	}
+</style>
+<script>
+	
+	window.onload = function() {
+		
+		var cell = document.getElementsByClassName("cell");
+		
+		for (var i=0; i<cell.length; i++) {
+			
+			cell[i].onmousedown = function() {
+								
+				if (event.buttons == 1) {
+					var c = event.srcElement;
+					if (c.innerHTML == "") {
+						c.innerHTML = "<img src='images/rect_icon01.png'>";
+					}
+				} else if (event.buttons == 2) {
+					var c = event.srcElement;
+					if (c.innerHTML == "") {
+						c.innerHTML = "<img src='images/rect_icon02.png'>";
+					}
+				}
+				
+			};
+			
+		}
+		
+	};
+	
+</script>
+</head>
+<body oncontextmenu="return false;">
+	<table id="tbl1">
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+	</table>
+</body>
+</html>

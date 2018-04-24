@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+   #s1 , #d1 , #b1 {
+      padding: 50px;
+   }
+   
+   #s1{ background: orange;}
+   #d1{background: green;}
+</style>
+<script>
+   
+   /*
+      DOM 이벤트처리
+      - addEventListener("이벤트 종류",fn,boolean)
+      - 3번째 인자인 boolean : capture | non-capture //이정도까지는 잘 안건들이지만 알려주는것!
+      - Event Bubbling , Event Capturing(Tunnering)
+      
+      Event Propagation, 이벤트 전파
+      - window -> document -> sec -> div -> btn
+      - 이벤트 전파 현상은 부모객체와 자식객체간 발생!!
+      - 양방향으로 발생한다!!
+      
+      1. window에서 이벤트 타겟의 부모
+         - capture
+         - 처리 가능한 capture 리스너가 호출된다.
+      
+      2. 이벤트 타겟
+         - target 단계
+         - 해당 타겟이 가지고 있는 모든 리스너가 호출된다.
+      
+      3. 이벤트 타겟의 부모로부터 window까지
+         - bubble 단계
+         - 처리 가능한 non-capture 리스너가 호출된다.
+   
+   */
+   
+   var s1,d1,b1;
+   
+   //window.addEventListener("load",f1);
+   //window.addEventListener("load",f2);
+   //window.addEventListener("load",f3);
+   window.addEventListener("load",f4);
+   
+   function f1(){
+      s1 = document.getElementById("s1");
+      d1 = document.getElementById("d1");
+      b1 = document.getElementById("b1");
+      
+       b1.onclick = function(){
+         console.log("버튼 클릭");
+         
+      };
+      
+      d1.onclick = function(){
+         console.log("패널(div) 클릭");
+         
+      };
+      
+      s1.onclick = function(){
+         console.log("새션 클릭");
+         
+      };
+      
+      document.onclick = function(){
+         console.log("문서 클릭");
+      };
+      
+      //DOM에서는 window 가 document의 부모는 아니다!! , 
+      //이벤트 관련 처리 파트에서는 부모취급을 한다!!!
+      window.onclick = function(){
+         console.log("창 클릭");
+      };
+      
+      
+   }//f1
+   
+   function f2(){
+      s1 = document.getElementById("s1");
+      d1 = document.getElementById("d1");
+      b1 = document.getElementById("b1");
+      
+      b1.onclick = function() {
+         console.log("버튼 클릭");
+         
+         //당사자! -> 이벤트 타겟 객체(당사자)
+         //event.srcElement 
+         //event.target
+         
+         //console.log(event.srcElement); // button
+         //console.log(event.target); // button
+         //console.log(event.currentTarget); // 사건을 일으키는 주체를 반환한다!
+         console.log(event.eventPhase); //정수형 반환!
+      };
+      
+      d1.onclick = function() {
+         console.log("패널 클릭");
+         console.log(event.srcElement);
+         console.log(event.eventPhase);
+      };
+      
+      s1.onclick = function() {
+         console.log("섹션 클릭");
+         console.log(event.srcElement);
+         console.log(event.eventPhase);
+      };
+      
+   }//f2
+   
+   function f3(){
+      s1 = document.getElementById("s1");
+      d1 = document.getElementById("d1");
+      b1 = document.getElementById("b1");
+   
+      //(캡쳐 ->타겟) -> 버블
+      //s1.addEventListener("onclick", function(){});//non-capter(=bubble) ; 생략하면 기본값 false
+      ////////////////////코딩순서는 중요하지 않다!! 이미 순서는 정해져있어서!
+      s1.addEventListener("click", function(){
+         console.log("섹션 클릭");
+         console.log(event.eventPhase);
+      },true);//capter
+      
+      d1.addEventListener("click", function(){
+         console.log("div 클릭");
+         console.log(event.eventPhase);
+      },true);//capter
+      
+/*       b1.addEventListener("click", function(){//섹션 클릭 ->div 클릭->버튼 클릭
+         console.log("버튼 클릭");
+         console.log(event.eventPhase);
+      },true);//capter */
+      
+      //버튼은 지금 반환점이다!!!!(맨위에 있다!!)
+      
+      //non-capter---------------------------------------------------------------
+      b1.addEventListener("click", function(){//섹션 클릭 ->div 클릭->버튼 클릭
+         console.log("버튼 클릭");
+         console.log(event.eventPhase);
+      });//non-capter
+      
+      d1.addEventListener("click", function(){
+         console.log("div 클릭");
+         console.log(event.eventPhase);
+      });//non-capter
+      
+      s1.addEventListener("click", function(){
+         console.log("섹션 클릭");
+         console.log(event.eventPhase);
+      });//non-capter
+   }
+   
+   
+   function f4(){
+      s1 = document.getElementById("s1");
+      d1 = document.getElementById("d1");
+      b1 = document.getElementById("b1");
+   
+      //(캡쳐 ->타겟) -> 버블
+      //s1.addEventListener("onclick", function(){});//non-capter(=bubble) ; 생략하면 기본값 false
+      ////////////////////코딩순서는 중요하지 않다!! 이미 순서는 정해져있어서!
+      s1.addEventListener("click", function(){
+         console.log("섹션 클릭");
+         console.log(event.eventPhase);
+         
+         event.stopPropagation(); //전파를 막겠다!! //섹션 클릭만 먹힌다!
+         
+      },true);//capter
+      
+      d1.addEventListener("click", function(){
+         console.log("div 클릭");
+         console.log(event.eventPhase);
+      },true);//capter
+      
+      
+      //버튼은 지금 반환점이다!!!!(맨위에 있다!!)
+      
+      //non-capter---------------------------------------------------------------
+      b1.addEventListener("click", function(){//섹션 클릭 ->div 클릭->버튼 클릭
+         console.log("버튼 클릭");
+         console.log(event.eventPhase);
+         
+         //전파 중단
+         //event.stopPropagation(); //전파를 막겠다!!
+         //event.stopImmediatePropagation();(이건 나중에 설명)
+         //event.cancelBubble = true;
+         
+      });//non-capter
+      
+      d1.addEventListener("click", function(){
+         console.log("div 클릭");
+         console.log(event.eventPhase);
+      });//non-capter
+      
+      s1.addEventListener("click", function(){
+         console.log("섹션 클릭");
+         console.log(event.eventPhase);
+      });//non-capter
+   }
+   function f0(){
+      s1 = document.getElementById("s1");
+      d1 = document.getElementById("d1");
+      b1 = document.getElementById("b1");
+      
+   }
+
+
+</script>
+</head>
+<body>
+   <section id="s1">
+      <div id = "d1">
+         <input type="button" id="b1" value="버튼"/>
+      </div>
+   </section>
+
+   <hr>
+   
+   <input type="text" id="txt1">
+   
+   <script>
+      var txt1 = document.getElementById("txt1");
+/*       txt1.onkeydown = function(){
+         //부모에 있는 전파를 중단하는것!!!!!
+         event.stopPropagation();
+         event.cancel = true;
+         
+      }; */
+      
+      //evt : event 이다!!
+      //window.event
+      //함수 호출 매개변수
+/*       txt1.onkeydown = function(evt){
+         //부모에 있는 전파를 중단하는것!!!!!
+         evt == event //true//evt : event 이다!!
+         event.stopPropagation();
+         event.cancel = true;
+         
+      };  */
+      
+      txt1.onkeydown = function(){
+         //컨트롤의 기본 행동을 없었던 일로 ...
+         //console.log(event.keyCode);
+         //event.preventDefault();
+         //console.log(event.keyCode);
+         
+         //영어 대문자만 입력만 가능하게!!
+         //var regex = /^[A-Z]${1,}$/;//영어 대문자만 1~무한대로!
+                  
+      }; 
+      
+      
+      txt1.onkeyup= function(){
+      
+    	  if(event.keyCode < 'A' && event.keyCode > 'Z'){
+    		  event.preventDefault();
+    		  
+    	  }
+      }
+      
+      
+/*       window.onkeydown = function() {
+         if(event.keyCode == 65){//A키를 눌렀을때
+            location.href = "admin.html";
+         }
+      }; */
+   </script>
+ 
+</body>
+</html>

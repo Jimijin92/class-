@@ -1,0 +1,183 @@
+package com.manager;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Scanner;
+
+import com.common.Schedule;
+import com.io.ComInSchedule;
+
+public class ComStudentDiary {
+	
+	private static Scanner scan;
+    //매니저 기본정보 넣은 리스트
+	private static ArrayList<Schedule> Schedulelist ;	
+	
+	
+	static {
+		 scan = new Scanner(System.in);
+		 Schedulelist = new ArrayList<Schedule>();
+		 //고유번호
+		 int idnumber;
+		 idnumber = 1;
+	 }
+	
+	public static void main(String[] args) {
+
+		studentdiary();
+		//m1();
+		
+	
+	}//main
+	
+	private static void m1() {
+		String[] dates = new String[5];
+		
+		 ComInSchedule.load();
+		 Schedulelist = ComInSchedule.getSchedulelist();
+		 
+		 dates = Schedulelist.get(2).getDays();
+		 System.out.println(dates[1]);
+		 
+		 for(int i=0; i<Schedulelist.size(); i++) {
+			 dates = Schedulelist.get(i).getDays();
+			 //System.out.println(Arrays.toString(dates));
+			 for(int j=0; j<5; j++) {
+				 if(!dates[j].equals("*")) {
+				  
+				 }
+			 }
+			 
+		 }
+		
+	}
+
+	private static void studentdiary() {
+		
+		
+		
+		//★★날짜표시용 달력 고정 틀
+		int year = 0;
+		int month = 0;
+		int lastDay = 0; //해당 달력의 마지막 날짜
+		int day_of_week = 0; //1일에 해당하는 요일
+		
+		System.out.println("학생 캘린더");
+		System.out.print("년 : ");
+		year = scan.nextInt();
+		
+		System.out.print("월 : ");
+		month = scan.nextInt();
+		
+		Calendar c = Calendar.getInstance();//현재 운영체제에 설정되어 있는 시간대를 기준으로 하위 객체얻기
+		c.set(Calendar.YEAR, year);
+		c.set(Calendar.MONTH, month - 1);
+		c.set(Calendar.DATE, 1);
+		
+		lastDay = c.getActualMaximum(Calendar.DATE);//특정월의 마지막일 구하기
+		day_of_week = c.get(Calendar.DAY_OF_WEEK);//요일을 리턴하는 함수 
+		
+	
+		//★★일정 메모용 달력 
+		String have = "O"; // 일정 표시 
+		int year2 = 0;
+		int month2 = 0;
+		int lastDay2 = 0; //해당 달력의 마지막 날짜
+		int day_of_week2 = 0; //1일에 해당하는 요일
+		
+		Calendar d = Calendar.getInstance();
+		d.set(Calendar.YEAR, year);
+		d.set(Calendar.MONTH, month - 1);
+		d.set(Calendar.DATE, 1);
+		
+		lastDay = d.getActualMaximum(Calendar.DATE);//특정월의 마지막일 구하기
+		day_of_week = d.get(Calendar.DAY_OF_WEEK);//요일을 리턴하는 함수 
+		
+		
+		//★★달력 출력
+		System.out.println();
+		System.out.println("====================================================");
+		System.out.printf("                    %d년 %d월\n", year, month);
+		System.out.println("====================================================");
+		System.out.println("[일]\t[월]\t[화]\t[수]\t[목]\t[금]\t[토]");
+		
+		
+		//1일을 해당 요일의 위치에 맞추기 위해 공백을 출력
+		for (int i=1; i<day_of_week; i++) {
+			System.out.print("\t");
+		}
+		
+		
+		//TODO O넣을 때 날짜와 비교해서 맞으면 O, 아니면 탭 넣기
+				
+		
+		int day2 = 1;// O을 초기화 시켜주기 위해서
+		
+		for (int day=1; day<=lastDay; day++) {
+			System.out.printf("%3d\t", day);
+			
+			//토요일
+			if ((day + day_of_week - 2) % 7 == 6) {
+				System.out.println();	
+				
+				if(day<=7) {
+					for (int j=1; j<day_of_week; j++) {
+						System.out.print("\t");
+					}
+				}
+				
+				for (; day2<=lastDay; day2++) {	
+					 if(day2==1) {
+						 System.out.printf("X\t");
+					 }
+					 day2++;
+					 System.out.printf("%3s\t", have);
+					
+					if ((day2 + day_of_week - 2) % 7 == 6) {
+						System.out.println();
+						day2++;
+						break;
+					}//if
+				}//for
+				
+			}//if
+		}//for
+		
+		System.out.println();
+		
+		for (; day2<=lastDay; day2++) {	
+			System.out.printf("%3s\t", have);	
+			
+			if ((day2 + day_of_week - 2) % 7 == 6) {
+				System.out.println();
+				day2++;
+				break;
+			} 
+		}
+		
+		
+//		for (int day2=1; day2<=lastDay; day2++) {
+//			System.out.printf("%3d\t", day2);
+//			
+//			if ((day2 + day_of_week - 2) % 7 == 6) {
+//				break;
+//			}
+//		}
+		
+		
+		//공백
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+		
+		
+		//스케쥴 세부보기
+		System.out.print("보고싶은 일 선택 : ");
+		year = scan.nextInt();
+		
+	}
+	
+}//class

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+</style>
+<script>
+
+   var btn1, box;
+   
+   window.onload = function(){
+       btn1=document.getElementById("btn1");
+       box=document.getElementById("box");
+       
+       btn1.onclick = function(){
+         
+      /*     
+          태그조작
+         1. 생성
+         2. 삭제
+         3. 수정(제어)
+         
+         태그 생성
+         1. innerHTML
+            - 쉽다.
+            - 생성될 태그를 문자열로 취급
+            - 업무를 이어서 조작하게 되면, 어렵다. (현재 상태에서는 동적으로 만들어진 태그가.. 문자열이라는 것 때문)
+       */
+       
+       //box.innerHTML = "<a href='http://naver.com'>네이버</a>";
+       
+       //추가업무
+       //   - 위의 링크에 target ="_blank"로 지정
+      
+       
+       //2, DOM에서 동적으로 태그를 만들때 주로 쓰는 방법. => DOM 메소드
+       //   - 표준, 일반적 방법
+      
+       //<예제>   
+       //   - <a href='http://naver.com'>네이버</a>를 각각 인식하면서 만들어보기
+       //1) <a>태그 만들기
+         var a = document.createElement("a");   //a태그의 엘리먼트 노드를 만들어 줌
+         console.log(a.nodeName);
+         console.log(a.nodeType);
+         console.log(a.nodeValue);
+         
+      //2) href="http://naver.com"
+         var href=document.createAttribute("href");   
+          href.value="http://naver.com";
+   
+         console.log(href.nodeName);
+         console.log(href.nodeType);
+         console.log(href.nodeValue);
+      
+      //3) <a href="http://naver.com"></a>
+         a.setAttributeNode(href);      //속성들만 따로 관리하는 attribute 
+         //console.log(a.attributes); 
+         console.log(a.href);
+         
+      //4) <a href="http://naver.com">네이버</a>
+         var txt = document.createTextNode("네이버");
+         console.log(txt.nodeType);   //3
+         //부모에게 자식 노드를 추가하는 메소드. 범용적인 메소드
+         a.appendChild(txt);
+         
+      //5) box추가, body라도 자식으로 들어가야 우리눈에 보일 수 있다.
+         box.appendChild(a);
+
+      
+      //br
+         var br = document.createElement("br");
+         box.appendChild(br);
+      
+      
+      
+      
+         var target = document.createAttribute("target");
+         target.value="_blank";
+         a.setAttributeNode(target);
+         
+         
+      //구글   
+         //<a href="http://google.com">구글</a>
+         var a2 = document.createElement("a");
+         a2.setAttribute("href", "http://google.com");
+         a2.innerText = "구글";
+         
+         box.appendChild(a2);         
+         
+         
+         
+       };
+       
+    };
+
+
+</script>
+</head>
+<body>
+   <!-- ex38_DOM.htm -->
+   
+   <input type="button" value="동적으로 태그 생성하기" id="btn1">
+   <hr>
+   
+   <div id="box">
+      <!-- <a>네이버</a>
+      <a>구글</a> -->
+   </div>
+   
+   
+   
+   
+   
+</body>
+</html>

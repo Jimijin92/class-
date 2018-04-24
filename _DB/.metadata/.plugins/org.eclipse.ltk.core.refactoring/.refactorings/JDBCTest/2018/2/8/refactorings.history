@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;member.dat&apos; to &apos;Team2/src/com.project2.mvc.manager.model.sql&apos;&#x0D;&#x0A;- Original project: &apos;JDBCTest&apos;&#x0D;&#x0A;- Destination element: &apos;Team2/src/com.project2.mvc.manager.model.sql&apos;&#x0D;&#x0A;- Original element: &apos;member.dat&apos;" description="Copy file" destination="=Team2/src&lt;com.project2.mvc.manager.model.sql" element1="memo/com/test/mvc/member/model/sql/member.dat" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1518999251997" units="0" version="1.0"/>
+</session>

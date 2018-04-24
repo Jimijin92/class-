@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	/*  
+	
+	전후 선택자 
+	1. :before
+	2. :after
+	 
+	전후 선택자에서 사용하는 CSS문법 
+	1.content속성
+		a. none
+		b. 문자열
+		c. attr(속성)
+		d. open-quote
+		e. close-quote
+		
+	*/
+
+	#p1 span{
+		color: red;
+	}
+	
+	#p1 span:before{
+		/* content: "중요{"; */
+		/* content:"<b>";  */
+		content:open-quote;
+	}
+	
+	#p1 span:after{
+		/* content: "}"; */
+		/* content: "</b>"; */
+		content: close-quote;
+	}
+
+	a {
+		color: black;
+		text-decoration: none;
+	}
+
+	a:after{
+		content: "(url: " attr(href) ")";
+	}
+	
+	
+	.tistory {
+		width: 90%;	
+		font-weight: bold;
+		background-color: #D8D8D8;
+		border-left: 10px solid #FF8224;	
+		border-righht: 10px solid #FF8224;
+		margin: 1.5em 10px;	
+		padding: 0.5em 10px;
+		quotes:"\201C""\201D""\2018""\2019";
+	}
+	
+	
+	.tistory:before {
+		color: #FF8224;	
+		content: open-quote;	
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;		
+	}
+	
+	
+</style>
+</head>
+<body>
+<!--ex35_selector.htm-->
+
+p>lorem100
+<p id = "p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo cumque praesentium labore porro iusto cum doloremque et 
+mollitia eius officia <span>itaque</span> sequi reprehenderit obcaecati modi veniam pariatur sit aspernatur exercitationem. Molestias atque eveniet 
+at dolor reiciendis quibusdam consequuntur nisi <span>similique</span> sapiente sint accusamus <span>quisquam</span> omnis enim quam dignissimos 
+pariatur error. Amet sint iusto eligendi <a href="http://google.com">구글</a>quaerat quis laudantium dicta minus sit et cum sequi quisquam unde <span>provident</span> velit voluptatum 
+rem nemo doloremque omnis repellendus sapiente quidem aspernatur in perspiciatis non voluptatibus nam <span>recusandae</span> delectus id reiciendis
+molestiae porro <a href="http://naver.com">네이버</a>ullam modi atque enim ut ducimus eos eveniet! Consequatur facilis deserunt saepe illo.</p>	
+
+
+<blockquote class="tistory">안녕하세요안녕하세요</blockquote>
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+</body>
+</html>

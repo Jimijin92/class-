@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	#cat {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		transition: all 1s;
+	}
+	
+</style>
+<script>
+	
+	var cat;
+	
+	window.onload = function() {
+		
+		cat = document.getElementById("cat");
+		
+	};
+	
+	window.onmousedown = function() {
+		
+		cat.style.left = event.clientX - 64 + "px";
+		cat.style.top = event.clientY - 64 + "px";
+		
+	};
+	
+</script>
+</head>
+<body>
+	
+	<img src="images/catty01.png" id="cat">
+	
+</body>
+</html>

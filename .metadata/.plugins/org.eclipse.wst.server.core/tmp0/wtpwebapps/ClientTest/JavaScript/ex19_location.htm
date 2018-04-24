@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+</style>
+<script>
+	//window.location 객체
+	//	-현재 창이 보고있는 문서의 URL과 관련된 작업 지원 
+
+	window.onload = function() {
+		var btn1 = document.all.btn1;
+		var url = document.forms[0].url;
+		var btn2 = document.forms[0].btn2;
+		
+		
+		btn1.onclick = function() {
+			console.log(window.location.host); //localhost:8090
+			console.log(location.hostname); //localhost
+			console.log(location.port); //8090
+			console.log(location.protocol); //http: or https;
+			console.log(location.href); //http://localhost:8090/ClientTest/JavaScript/ex19_location.htm
+
+			//자바스크립트의 페이지 이동하기 
+			//location.href = "http://naver.com";
+			
+			//location.reload(); //F5, 새로고침
+			//location.href="ex19_relocation.htm"
+			
+			
+			//location.replace("http://google.com");//페이지 이동하기, 사실상 location.href = "http://naver.com" 이거랑 같은데 후자가 더 편해서 많이씀
+																				//(메소드 다루는거 보다는 변수를 다루는게 나음)	
+		};//btn1.onclick
+
+		
+		btn2.onclick = function(){
+			if(url.value.toLowerCase().indexOf("http://")== -1){
+				location.href = "http://"+ url.value; //naver.com
+			}else{
+				location.href = url.value;//http://naver.com	
+			}
+		};
+		
+	
+		url.onkeydown = function(){
+			
+			if(event.keyCode == 13){
+				//alert("a");
+				btn2.click();//btn2를 클릭한것과 동일하게 실행(에뮬레이터 함수)
+			}
+		};
+		
+		
+	};//window.onload
+	
+	/*
+	window.onkeydown = function(){
+		
+		//console.log(event.keyCode);
+		//77, 65, 66
+		if(event.keyCode == 77){
+			location.href = "member.htm";
+		}else if(event.keyCode ==65){
+			location.href = "admin.htm";
+		}else if(event.keyCode ==66){
+			location.href = "board.htm";
+		}
+	};
+	*/
+	
+	//모든 이벤트는 false를 반환받으면 이벤트가 취소된다. 
+	/* 
+		form1.onsubmit = function(){
+		return false;
+		} 
+		아래 onsubmit="return false;" 랑 같은기능임
+	*/
+	
+	
+</script>
+</head>
+<body>
+	<!--ex19_location.htm-->
+	<input
+		type="button"
+		value="버튼1"
+		name="btn1"
+	>
+	
+	<h1>사이트</h1>
+	
+	<nav>
+		<a href="member.htm" accesskey="m">회원</a>
+		<a href="admin.htm" accesskey="a">관리자</a>
+		<a href="board.htm" accesskey="b">게시판</a>
+	</nav>
+	
+	
+	<hr>
+	
+	<!-- form태그 내에 텍스트박스가 유일하면 -> 엔터가 submit내장 -->
+	<form action="ex19.jsp" onsubmit="return false;">
+		<!-- <input type ="text"> -->
+		<input type = "text" name="url" size="50">
+		<input type = "button" name="btn2" value="이동하기">
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
