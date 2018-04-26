@@ -1,0 +1,97 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+		pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>		
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/ajax/css/bootstrap.css">
+<script src="/ajax/js/jquery-1.12.4.js"></script>
+<script src="/ajax/js/bootstrap.js"></script>
+<style>
+
+</style>
+<script>
+
+	$(function(){
+
+		//방법1(비효율적이어서 잘 안씀)
+	/* 	$("#btnCheck").click(function(){
+			location.href = "/ajax/idcheck.do?id=" +$("#id").val();
+		}); */
+
+		/* //방법2. 팝업띄우기
+			$("#btnCheck").click(function(){
+				window.open("/ajax/idcheck.do?id=" +$("#id").val(), "idcheck","width=300, height=250");
+			}); */
+
+
+		/* //방법3. o -> ajax
+		$("#btnCheck").click(function(){
+			$("#iframe1").attr("src", "/ajax/idcheck2.do?id=" + $("#id").val());
+		});
+ 		*/
+
+		//방법4. O Ajax: 권장
+		//$("#btnCheck").click(function(){
+			$("#id").change(function(){
+			
+			var ajax = new XMLHttpRequest();
+			
+			ajax.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					//alert(this.responseText);
+					if(this.responseText == "1"){
+						$("#result").text("이미 사용중");
+					}else{
+						$("#result").text("사용해도 좋음");
+					}
+				}
+			};
+
+			ajax.open("GET","/ajax/ex06data.do?id=" + $("#id").val(), true);
+			ajax.send();
+			
+		});
+	});
+
+</script>
+</head>
+<body>
+	<!-- "WebContent/WEB-INF/view/ajax/ex03.jsp" -->
+
+	<div class="container">
+		<h2 class="page-header">회원가입</h2>
+		<table class="table table-bordered">
+			<tr>
+				<th>이름</th>
+				<td class="form-inline">
+					<input type="text" name="name"  id= "name" class="form-control"/>
+				</td>
+			</tr>
+			<tr>
+				<th>나이</th>
+				<td class="form-inline">
+					<input type="text" name="age" id= "age" class="form-control"/>
+				</td>
+			</tr>
+			<tr>
+				<th>아이디</th>
+				<td class="form-inline">
+					<input type="text" name="id" id= "id" class="form-control"/>
+					<input type="button" value="중복검사하기" id="btnCheck" class="btn btn-info"/>
+					<span Class="text-danger" id="result"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>암호</th>
+				<td class="form-inline">
+					<input type="text" name="pw" id= "pw"class="form-control"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로젝트</title>
+<title>깃 변경사항 확인하기</title>
 <jsp:include page="/inc/asset.jsp"></jsp:include>
 <style>
 	
